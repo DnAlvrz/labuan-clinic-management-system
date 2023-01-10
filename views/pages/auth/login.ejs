@@ -1,25 +1,39 @@
 <%- include('../../includes/header') %>
-<div class="container-fluid d-flex justify-content-center align-items-center" id="login-container">
-  <div class="card h-50 w-50" id="login-card">
-      <form>
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-          <input type="email" id="form1Example1" class="form-control" />
-          <label class="form-label" for="form1Example1">Email address</label>
-        </div>
-      
-        <!-- Password input -->
-        <div class="form-outline mb-4">
-          <input type="password" id="form1Example2" class="form-control" />
-          <label class="form-label" for="form1Example2">Password</label>
-        </div>
-      
-      
-        <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-      </form>
+<div class="card">
+  <div class="fixed-div">
+    <div class="login-img">
+      <h1>Welcome</h1>
+      <img src="/img/desktop-img.png" class="img-fluid"/>
+    </div>
   </div>
+  <div class="card-body">
+    <div class="login-logo">
+      <img src="/img/mobile-logo.png" class="mobile-logo" alt="">
+      <img src="/img/desktop-logo.png" class="desktop-logo" alt="">
+    </div>
+    <h5 class="card-title">LOGIN</h5>
+    <p class="card-text">Please sing in to continue.</p>
+    <form>
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="form1Example1" class="form-control" />
+        <label class="form-label" for="form1Example1">Email address</label>
+      </div>
+    
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" id="form1Example2" class="form-control" />
+        <label class="form-label" for="form1Example2">Password</label>
+      </div>
+    
+    
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+    </form>
   </div>
+</div>
+
 
 
 <%- include('../../includes/footer') %>
+

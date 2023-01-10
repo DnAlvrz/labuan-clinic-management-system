@@ -1,19 +1,71 @@
-*{
-  padding: 0;
-  margin: 0;
-  border: none;
-  box-sizing: border-box;
+*{   padding: 0;   margin: 0;   
+  border: none;   
+  box-sizing: border-box; 
+} 
+body{   
+  min-height: 100vh;   
+  display: flex;   
+  justify-content: center;   
+  align-items: center; 
+} 
+.card{   
+  display: flex;   
+  flex-direction: row; 
+} 
+.login-img{   
+  margin: auto;   
+  max-width: 50vw;   
+  text-align: center;   
+  padding: 2rem; 
+} 
+.login-img > img{   
+  max-width: 100%;   
+  display: block; 
+} 
+.card-body{   
+  padding: 2rem;   
+  margin: auto; 
+} 
+.login-logo{   
+  display: flex;   
+  justify-content: center;   
+  align-items: center;   
+  max-width: 15rem; 
+} 
+.desktop-logo{   
+  max-width: 100%;   
+  display: block; 
+} 
+.mobile-logo{   
+  display: none; 
+} 
+.fixed-div{   
+  max-width: 45rem;   
+  border-top-right-radius: 5rem;   
+  border-bottom-right-radius: 5rem;   
+  box-shadow: 5px 10px 18px #888888; 
 }
-body, html{
-  width: 100%;
-  height: 100%;
-}
-#login-container{
-  width: 100%;
-  height: 100%;
-}
-#login-card{
-  padding: 2em;
-  /* width: 30rem;
-  height: 20rem; */
+ @media not all and (min-width: 1020px){   
+  .login-img{     
+    display: none;   
+  }   
+  .desktop-logo{     
+    display: none;   
+  }   
+  .mobile-logo{     
+    display: block;     
+    max-width: 100%;   
+  } 
+} 
+@media screen and (max-width: 1536px){   
+  .login-img > img{     
+    max-width: 100%;     
+    display: block;   
+  }   
+  .fixed-div{     
+    max-width: 45rem;     
+    display: flex;     
+    justify-content: center;     
+    align-items: center;   
+  }
 }
