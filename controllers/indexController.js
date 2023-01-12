@@ -5,8 +5,12 @@ const index = async (req, res) => {
 const loginUser = async (req, res) => {
     res.render('pages/auth/login', { title: 'Login' });
 }
+const studentTable = async (req, res) => {
+    res.render('pages/tables/student-table', { title: 'Student' });
+}
 
 module.exports = {
     index,
-    loginUser
+    loginUser,
+    studentTable
 }
