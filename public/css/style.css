@@ -61,7 +61,7 @@ html,body{
   .mobile-logo{     
     display: block;     
     max-width: 100%;   
-  } 
+  }
 } 
 @media screen and (max-width: 1536px){   
   .login-img > img{     
@@ -74,24 +74,58 @@ html,body{
     justify-content: center;     
     align-items: center;   
   }
+  .sidebar{
+    width: 240px;
+    z-index: 600;
+  }
 }
 #region, #division{
   text-align: center;
 }
 
-
-body {
-  background-color: #fbfbfb;
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  height: 100%;
+  padding: 58px 0 0; /* Height of navbar */
+  overflow: auto;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+.sidebar-logo{
+  padding: 3rem 2rem 2rem 2rem;
+  display: flex;   
+  justify-content: center;   
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.sidebar-img{
+  max-width: 5rem;
+  padding-bottom: 1rem;
+}
+.sidebar-img > img{
+  max-width: 100%;
+  display: block;
+}
+.main-content{
+  padding-top: 5rem;
 }
 @media (min-width: 991.98px) {
-  main {
+  .main-content {
     padding-left: 240px;
   }
-}
-.th{
-  cursor: pointer;
-}
-
-.fa-arrow-up:hover{
-  rotate: 3.1416rad;
 }
