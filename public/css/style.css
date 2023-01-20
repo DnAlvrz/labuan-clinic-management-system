@@ -1,94 +1,17 @@
-*{   
-  padding: 0;   
-  margin: 0;   
-  border: none;   
-  box-sizing: border-box; 
-} 
-html,body{   
-  max-height: 100%;
-  max-width: 100%;
-} 
-#login-container{
-  min-height: 100vh;   
-  display: flex;   
-  justify-content: center;   
-  align-items: center; 
-}
-#login-card{   
-  display: flex;   
-  flex-direction: row; 
-} 
-.login-img{   
-  margin: auto;   
-  max-width: 50vw;   
-  text-align: center;   
-  padding: 2rem; 
-} 
-.login-img > img{   
-  max-width: 100%;   
-  display: block; 
-} 
-#login-card-body{   
-  padding: 2rem;   
-  margin: auto; 
-} 
-.login-logo{   
-  display: flex;   
-  justify-content: center;   
-  align-items: center;   
-  max-width: 15rem; 
-} 
-.desktop-logo{   
-  max-width: 100%;   
-  display: block; 
-} 
-.mobile-logo{   
-  display: none; 
-} 
-.fixed-div{   
-  max-width: 45rem;   
-  border-top-right-radius: 5rem;   
-  border-bottom-right-radius: 5rem;   
-  box-shadow: 5px 10px 18px #888888; 
-}
- @media not all and (min-width: 1020px){   
-  .login-img{     
-    display: none;   
-  }   
-  .desktop-logo{     
-    display: none;   
-  }   
-  .mobile-logo{     
-    display: block;     
-    max-width: 100%;   
-  }
-} 
-@media screen and (max-width: 1536px){   
-  .login-img > img{     
-    max-width: 100%;     
-    display: block;   
-  }   
-  .fixed-div{     
-    max-width: 45rem;     
-    display: flex;     
-    justify-content: center;     
-    align-items: center;   
-  }
-  .sidebar{
-    width: 240px;
-    z-index: 600;
-  }
-}
-#region, #division{
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
 }
 
-/* Sidebar */
+/* ----- Sidebar ----- */
 .sidebar {
   position: fixed;
-  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
   padding: 58px 0 0; /* Height of navbar */
-  overflow: auto;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
   width: 240px;
   z-index: 600;
@@ -106,26 +29,94 @@ html,body{
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 .sidebar-logo{
-  padding: 3rem 2rem 2rem 2rem;
-  display: flex;   
-  justify-content: center;   
-  align-items: center;
+  padding: 2rem;
+  padding-top: 1rem;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
-.sidebar-img{
-  max-width: 5rem;
-  padding-bottom: 1rem;
-}
-.sidebar-img > img{
-  max-width: 100%;
+.sidebar-logo > img{
   display: block;
+  max-width: 10rem;
+  padding: 1rem;
 }
-.main-content{
-  padding-top: 5rem;
+/* ----- MAIN CONTENT ----- */
+.main-container{
+  margin-top: 58px;
 }
+.dashboard{
+  padding: 3rem;
+  padding-top: 1rem;
+}
+.dashboard-counter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-counter{
+  min-width: 25%;
+  margin-bottom: 2rem;
+}
+.card-counter-body{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+.dashboard-counter-content{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  min-width: 50%;
+}
+.dashboard-logo{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 30%;
+}
+.dashboard-logo > i {
+  font-size: 3em;
+}
+.student{
+  padding: 2rem;
+}
+.search-button{
+  padding-top: 1.5rem;
+}
+.student-list{
+  padding-top: 2rem;
+}
+.search{
+  max-width: 20rem;
+}
+.student-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+table{
+  max-width: 100%;
+}
+
+
+/* ----- MEDIA RESPONSIVENESS ------ */
 @media (min-width: 991.98px) {
-  .main-content {
+  .main-container{
     padding-left: 240px;
+  }
+  .dashboard-counter{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .card-counter{
+    min-width: 30%;
+    margin: 0;
   }
 }

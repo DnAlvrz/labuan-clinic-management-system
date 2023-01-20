@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-const {student} = require('../controllers/studentController')
+const {visitor} = require('../controllers/visitorController')
 
 
-router.get('/',student);
+router.get('/',visitor);
 
 module.exports = router;
