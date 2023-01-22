@@ -6,9 +6,9 @@
     <!-- Sidebar -->
     <nav
          id="sidebarMenu"
-         class="collapse d-lg-block sidebar collapse bg-white"
+         class="collapse d-lg-block sidebar collapse"
          >
-      <div class="position-sticky">
+      <div class="position-sticky ">
         <div class="sidebar-logo">
           <img src="/img/sidebar-logo.png" alt="">
           <h4>Ramon Enriquez High School</h4>
@@ -16,7 +16,7 @@
         <div class="list-group list-group-flush mx-3 mt-4">
           <a
              href="/"
-             class="list-group-item list-group-item-action py-2 ripple"
+             class="list-group-item list-group-item-action py-2 ripple sidebar-button"
              data-button="dashboard-button"
              id="dashboard"
              >
@@ -25,7 +25,7 @@
           </a>
           <a
              href="/students"
-             class="list-group-item list-group-item-action py-2 ripple"
+             class="list-group-item list-group-item-action py-2 ripple sidebar-button"
              data-button="student-button"
              id="student"
              >
@@ -34,14 +34,14 @@
           </a>
           <a
              href="/patients"
-             class="list-group-item list-group-item-action py-2 ripple"
+             class="list-group-item list-group-item-action py-2 ripple sidebar-button"
              data-button="patient-button"
              id="patient"
              ><i class="fas fa-clinic-medical me-3"></i><span>Patient</span></a
             >
           <a
              href="/visitors"
-             class="list-group-item list-group-item-action py-2 ripple"
+             class="list-group-item list-group-item-action py-2 ripple sidebar-button"
              data-button="visitor-button"
              id="visitor"
              ><i class="fas fa-user-alt me-3"></i
@@ -55,13 +55,13 @@
     <!-- Navbar -->
     <nav
          id="main-navbar"
-         class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+         class="navbar navbar-expand-lg fixed-top main-navbar" style="background-color: #0824a2; box-shadow: none; "
          >
       <!-- Container wrapper -->
-      <div class="container-fluid">
+      <div class="container-fluid nav">
         <!-- Toggle button -->
         <button
-                class="navbar-toggler"
+                class="navbar-toggler text-white"
                 type="button"
                 data-mdb-toggle="collapse"
                 data-mdb-target="#sidebarMenu"
@@ -77,7 +77,7 @@
           <!-- Notification dropdown -->
           <li class="nav-item dropdown">
             <a
-               class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+               class="nav-link dropdown-toggle hidden-arrow text-white pe-4"
                href="#"
                id="navbarDropdownMenuLink"
                role="button"
@@ -100,7 +100,6 @@
               </li>
             </ul>
           </li>
-  
   
           <!-- Avatar -->
           <li class="nav-item dropdown ">

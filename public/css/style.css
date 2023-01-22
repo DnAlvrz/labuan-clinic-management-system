@@ -15,6 +15,8 @@
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
   width: 240px;
   z-index: 600;
+  background-color: #0824a2;
+  color: #ddd;
 }
 .sidebar .active {
   border-radius: 5px;
@@ -41,6 +43,17 @@
   display: block;
   max-width: 10rem;
   padding: 1rem;
+}
+.sidebar-button {
+  background-color: #0824a2;
+  color: #fff;
+  border-bottom: #ddd solid 1px ;
+}
+.sidebar-button:hover{
+  border-radius: 10rem;
+}
+.main-navbar{
+  background-color: #0824a2;
 }
 /* ----- MAIN CONTENT ----- */
 .main-container{
@@ -97,13 +110,59 @@
   flex-direction: row;
   justify-content: flex-end;
 }
-table{
-  max-width: 100%;
+.table{
+	width: 100%;
+	border-collapse: collapse;
 }
 
+.table td,.table th{
+  padding:12px 15px;
+  text-align: center;
+  font-size:16px;
+}
 
+.table tbody tr:nth-child(even){
+	background-color: #f5f5f5;
+}
+/* ------ LOGIN DESIGN ------ */
+.login-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 100%;
+  min-height: 100vh;
+}
+.login-img {
+  max-width: 50rem;
+}
+.login-img > img{
+  display: block;
+  max-width: 100%;
+}
+.login-card > .card{
+  box-shadow: none;
+  min-height: 15rem;
+  min-width: 25rem;
+}
+.card-login-logo{
+  max-width: 15rem;
+  padding: 2rem;
+}
+.card-login-logo > img{
+  display: block;
+  max-width: 100%;
+}
+.login-btn{
+  background-color: #0824a2;
+  color: #f5f5f5;
+}
+.login-btn:hover{
+  background-color: #f5f5f5;
+  color: #0824a2;
+}
 /* ----- MEDIA RESPONSIVENESS ------ */
-@media (min-width: 991.98px) {
+@media only screen and (min-width: 991.98px) {
   .main-container{
     padding-left: 240px;
   }
@@ -118,5 +177,56 @@ table{
   .card-counter{
     min-width: 30%;
     margin: 0;
+  }
+
+}
+@media not all and (min-width: 991.98px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+  .table tr,
+  .table th{
+    border:1px solid #ddd;
+  }
+  .card-counter{
+    min-width: 50%;
+    margin-bottom: 2rem;
+  }
+  .login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    min-height: 100vh;
+  }
+  .login-img > img{
+    display: none;
+  }
+  .login-card > .card{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }

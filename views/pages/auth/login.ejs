@@ -1,38 +1,33 @@
-<%- include('../../includes/header') %>\
-<div class="container-fluid" id="login-container">
-  <div class="card" id="login-card">
-    <div class="fixed-div">
-      <div class="login-img">
-        <h1>Welcome</h1>
-        <img src="/img/desktop-img.png" class="img-fluid"/>
-      </div>
-    </div>
-    <div class="card-body" id="login-card-body">
-      <div class="login-logo">
-        <img src="/img/mobile-logo.png" class="mobile-logo" alt="">
-        <img src="/img/desktop-logo.png" class="desktop-logo" alt="">
-      </div>
-      <h5 class="card-title">LOGIN</h5>
-      <p class="card-text">Please sing in to continue.</p>
-      <form>
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-          <input type="email" id="form1Example1" class="form-control" />
-          <label class="form-label" for="form1Example1">Email address</label>
-        </div>
-      
-        <!-- Password input -->
-        <div class="form-outline mb-4">
-          <input type="password" id="form1Example2" class="form-control" />
-          <label class="form-label" for="form1Example2">Password</label>
-        </div>
-      
-      
-        <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-      </form>
+<%- include('../../includes/header') %>
+<div class="container-fluid login-container">
+  <div class="login-logo">
+    <div class="login-img">
+      <img src="/img/undraw_medicine_b1ol.png" alt="">
     </div>
   </div>
+  <div class="login-card">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">Sign In</h1>
+        <p class="card-text">Please sign in to continue.</p>
+        <form>
+          <div class="form-outline mb-4">
+            <input type="email" id="form1Example1" class="form-control" />
+            <label class="form-label" for="form1Example1">Email address</label>
+          </div>
+        
+          <div class="form-outline mb-4">
+            <input type="password" id="form1Example2" class="form-control" />
+            <label class="form-label" for="form1Example2">Password</label>
+          </div>
+        
+        
+          <button type="submit" class="btn btn-block login-btn">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 

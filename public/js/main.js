@@ -69,10 +69,10 @@ function buildTable(data){
     for(let i = 0; i < data.length; i++){
         let row =
         `<tr>
-            <td>${data[i].id}</td>
-            <td>${data[i].name}</td>
-            <td>${data[i].grade}</td>
-            <td>${data[i].section}</td>
+            <td data-label="ID No.">${data[i].id}</td>
+            <td data-label="Name">${data[i].name}</td>
+            <td data-label="Grade">${data[i].grade}</td>
+            <td data-label="Section">${data[i].section}</td>
         </tr>`
 
         table.innerHTML += row
