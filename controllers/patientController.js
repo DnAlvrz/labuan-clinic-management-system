@@ -1,5 +1,5 @@
 const patient = async (req, res) => {
-    res.render('pages/patients', { title: 'San Ramon Patients' });
+    res.render('pages/patients', { title: 'Patients' });
 }
 
 

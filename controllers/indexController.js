@@ -1,5 +1,5 @@
 const index = async (req, res) => {
-    res.render('pages/index', { title: 'Express' });
+    res.render('pages/index', { title: 'Dashboard' });
 }
 
 const loginUser = async (req, res) => {
