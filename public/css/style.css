@@ -14,7 +14,7 @@
   padding: 58px 0 0; /* Height of navbar */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   width: 240px;
-  z-index: 600;
+  z-index: 9999;
   background-color: #0A2647;
 }
 .sidebar .active {
@@ -47,7 +47,6 @@
 .navbar{
   box-shadow: none;
   background-color: #0A2647;
-  z-index: -1;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .navbar-button{
@@ -79,6 +78,7 @@
   min-width: 25%;
   margin-bottom: 2rem;
   background-color: #002B5B;
+  color: #F9F9F9;
 }
 .card-counter-body{
   display: flex;
@@ -252,6 +252,5 @@
   .navbar{
     box-shadow: none;
     background-color: #0A2647;
-    z-index: 600;
   }
 }
