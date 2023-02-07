@@ -14,24 +14,24 @@
             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="">
+            <form method="POST" action="/students">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" id="firstname" class="form-control" />
+                    <input type="text" id="firstname" name="firstName" class="form-control" required/>
                     <label class="form-label" for="firstname">First name</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" id="lastname" class="form-control" />
+                    <input type="text" id="lastname" name="lastName" class="form-control" required/>
                     <label class="form-label" for="lastname">Last name</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" id="middlename" class="form-control" />
+                    <input type="text" id="middlename" name="middleName" class="form-control" required/>
                     <label class="form-label" for="middlename">Middle name</label>
                   </div>
                 </div>
@@ -39,13 +39,13 @@
               <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="lrn" class="form-control" />
+                      <input name="grade" type="text" id="lrn" class="form-control" required/>
                       <label class="form-label" for="lrn">Grade</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="schoolId" class="form-control" />
+                      <input name="section" type="text" id="schoolId" class="form-control" required/>
                       <label class="form-label" for="schoolId">Section</label>
                     </div>
                   </div>
@@ -53,28 +53,28 @@
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="lrn" class="form-control" />
-                      <label class="form-label" for="lrn">School ID</label>
+                      <input name="schoolId" type="text" id="lrn" class="form-control" required/>
+                      <label  class="form-label" for="lrn">School ID</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="schoolId" class="form-control" />
-                      <label class="form-label" for="schoolId">Gender</label>
+                      <input name="gender" type="text" id="gender" class="form-control" required/>
+                      <label class="form-label" for="gender">Gender</label>
                     </div>
                   </div>
                 </div>
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="lrn" class="form-control" />
-                      <label class="form-label" for="lrn">Contact No.</label>
+                      <input name="contactNum" type="text" id="contactNum" class="form-control" required/>
+                      <label class="form-label" for="contactNum">Contact No.</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="schoolId" class="form-control" />
-                      <label class="form-label" for="schoolId">Parent Contact No.</label>
+                      <input name="contactPersonNum"  type="text" id="contactPersonNum" class="form-control" required/>
+                      <label class="form-label" for="contactPersondNum">Parent Contact No.</label>
                     </div>
                   </div>
                 </div>
@@ -84,35 +84,34 @@
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="month" class="form-control" />
+                      <input name="month" type="text" id="month" class="form-control" required/>
                       <label class="form-label" for="month">Month</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="number" id="date" class="form-control" />
-                      <label class="form-label" for="date">Date</label>
+                      <input name="day" type="number" id="day" class="form-control" required/>
+                      <label class="form-label" for="day">Day</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="number" id="year" class="form-control" />
+                      <input name="year" type="number" id="year" class="form-control" required/>
                       <label class="form-label" for="year">Year</label>
                     </div>
                   </div>
                 </div>
-            
               <div class="form-outline mb-4">
-                <input type="email" id="birthPlace" class="form-control" />
+                <input name="birthPlace" type="text" id="birthPlace" class="form-control" required/>
                 <label class="form-label" for="birthPlace">Birthplace</label>
               </div>
             
               <div class="form-outline mb-4">
-                  <input type="text" id="parentGuardian" class="form-control" />
-                  <label class="form-label" for="parentGuardian">Parent/Guardian</label>
+                  <input name="contactPerson" type="text" id="contactPerson" class="form-control" required/>
+                  <label class="form-label" for="contactPerson">Parent/Guardian</label>
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="text" id="address" class="form-control" />
+                  <input name="address" type="text" id="address" class="form-control" required/>
                   <label class="form-label" for="address">Address</label>
                 </div>
               <!-- Submit button -->

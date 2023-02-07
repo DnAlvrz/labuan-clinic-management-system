@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-const studentSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     schoolId: {
         type:String,
         required: true,
@@ -18,32 +18,11 @@ const studentSchema = new mongoose.Schema({
         type:String,
         required: true, 
     },
-    grade: {
-        type:String,
-        required: true, 
-    },
-    section: {
-        type:String,
-        required: true, 
-    },
-    gender: {
-        type:String,
-        required: true, 
-    },
-    contactNum: {
-        type:String,
-        required: true, 
-        unique: true,
-    },
-    birthPlace: {
+    username: {
         type:String,
         required: true,
     },
-    contactPerson: {
-        type:String,
-        required: true,
-    },
-    address: {
+    password: {
         type:String,
         required: true,
     },
@@ -64,4 +43,4 @@ const studentSchema = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('Student',studentSchema)
+module.exports = mongoose.model('User', userSchema)
