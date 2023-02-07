@@ -180,6 +180,11 @@
 .form-select-btn:focus{
   outline:  2px solid #0275d8;
 }
+.form-btn-group{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
 /* ----- MEDIA RESPONSIVENESS ------ */
 @media only screen and (min-width: 991.98px) {
   .main-container{
