@@ -1,5 +1,4 @@
 const theadRow = Array.from(document.querySelectorAll('th'));
-const btnONFocus = document.querySelectorAll('.list-group .sidebar-button')
 let myArray = [
 {
     'id': '348205',
@@ -101,4 +100,3 @@ function myFunction() {
       }       
     }
   }
-
