@@ -14,8 +14,7 @@ const authenticationRouter = require('./routes/auth');
 const studentRouter = require('./routes/students');
 const patientRouter = require('./routes/patients');
 const visitorRouter = require('./routes/visitor');
-const studentFormRouter = require('./routes/studentForm');
-const studentFindingsRouter = require('./routes/studentFindings');
+
 
 const Student  = require('./models/Student');
 const initPassport = require('./passport-config');
@@ -57,8 +56,7 @@ app.use('/users', usersRouter);
 app.use('/students', studentRouter);
 app.use('/patients', patientRouter)
 app.use('/visitors', visitorRouter)
-app.use('/student/form', studentFormRouter)
-app.use('/student/findings', studentFindingsRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

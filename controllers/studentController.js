@@ -68,10 +68,19 @@ const newStudent = async (req, res) => {
        res.redirect('/error/500');
     }
 }
-    
+const studentForm = async (req, res) => {
+    res.render('pages/studentForm', { title: 'Student-Form' });
+}
+const studentFindings = async (req, res) => {
+    res.render('pages/studentFindings', { title: 'Student Findings' });
+}
+
+
 
 
 module.exports = {
     student,
-    newStudent
+    newStudent,
+    studentForm,
+    studentFindings
 }
