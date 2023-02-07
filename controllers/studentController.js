@@ -76,11 +76,9 @@ const studentFindings = async (req, res) => {
 }
 
 
-
-
 module.exports = {
     student,
     newStudent,
     studentForm,
-    studentFindings
+    studentFindings,
 }
