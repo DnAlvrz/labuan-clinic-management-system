@@ -1,14 +1,14 @@
 <%- include('../includes/header') %>
 <%- include('../includes/formNavbar') %>
-<div class="container">
+<div class="container student-form-container">
     <div class="form-tittle mt-3">
         <h1>Student Profiling Form</h1>
         <p>Please fill out the form below.</p>
     </div>
     <div class="form-container">
-        <form class="">
+        <form class="student-form">
             <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row mb-4">
+            <div class="row mb-4 form-row">
               <div class="col">
                 <div class="form-outline">
                   <input type="text" id="firstname" class="form-control" required />
@@ -28,7 +28,7 @@
                 </div>
               </div>
             </div>
-            <div class="row mb-4">
+            <div class="row mb-4 form-row">
                 <div class="col">
                   <div class="form-outline">
                     <input type="number" id="lrn" class="form-control" required  />
@@ -42,11 +42,11 @@
                   </div>
                 </div>
               </div>
-              <div class="row mb-4">
+              <div class="row mb-4 form-row">
                 <div class="DoB-label">
                     <label for="">Date of Birth</label>
                 </div>
-                <div class="col">
+                <div class="col form col">
                     <select class="select form-select-btn" required >
                         <option value="" disabled selected>Month</option>
                         <option value="1">January</option>
@@ -57,10 +57,10 @@
                         <option value="6">June</option>
                         <option value="7">July</option>
                         <option value="8">August</option>
-                        <option value="8">September</option>
-                        <option value="8">October</option>
-                        <option value="8">November</option>
-                        <option value="8">December</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
                       </select>
                   </div>
                 <div class="col">
@@ -69,7 +69,7 @@
                     <label class="form-label" for="date">Date</label>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col form-col">
                     <select class="select form-select-btn">
                         <option value="" disabled selected>Year</option>
                         <option value="1940">1940</option>
@@ -159,7 +159,7 @@
                       </select>
                 </div>
               </div>
-              <div class="row mb-4">
+              <div class="row mb-4 form-row">
                 <div class="col">
                   <div class="form-outline">
                     <input type="text" id="region" class="form-control text-center" value="IX" disabled/>
@@ -179,22 +179,35 @@
                     </div>
                   </div>
               </div>
+              
           
-            <div class="form-outline mb-4">
-              <input type="text" id="birthPlace" class="form-control" required  />
-              <label class="form-label" for="birthPlace">Birthplace</label>
+              <div class="row mb-4 form-row">
+                <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="contactNo" class="form-control" required  />
+                      <label class="form-label" for="contactNo">Birthplace</label>
+                    </div>
+                  </div>
             </div>
           
-            <div class="form-outline mb-4">
-                <input type="text" id="parentGuardian" class="form-control" required  />
-                <label class="form-label" for="parentGuardian">Parent/Guardian</label>
-              </div>
-              <div class="form-outline mb-4">
-                <input type="text" id="address" class="form-control" required  />
-                <label class="form-label" for="address">Address</label>
+            <div class="row mb-4 form-row">
+                <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="contactNo" class="form-control" required  />
+                      <label class="form-label" for="contactNo">Parent/Guardian</label>
+                    </div>
+                </div>
+            </div>
+              <div class="row mb-4 form-row">
+                <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="contactNo" class="form-control" required  />
+                      <label class="form-label" for="contactNo">Address</label>
+                    </div>
+                </div>
               </div>
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary">Next</button>
+            <button type="submit" class="btn btn-primary form-student-btn">Next</button>
           </form>
     </div>
 </div>
