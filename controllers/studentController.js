@@ -85,10 +85,14 @@ const studentForm = async (req, res) => {
 const studentFindings = async (req, res) => {
     res.render('pages/studentFindings', { title: 'Student Findings' });
 }
+const studentRecord = async (req, res) => {
+    res.render('pages/studentRecord', { title: 'Student Medical Record' });
+}
 
 module.exports = {
     student,
     newStudent,
     studentForm,
     studentFindings,
+    studentRecord
 }

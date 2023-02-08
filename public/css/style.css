@@ -185,6 +185,29 @@
   flex-direction: row;
   justify-content:space-between;
 }
+.findings-student-btn{
+  margin-bottom: 1.5rem;
+}
+.student-identity{
+  display: flex;
+  flex-direction: row;
+}
+.modal-info{
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal-image > img {
+  display: block;
+  max-width: 12rem;
+  padding: 1rem;
+}
+.student-details-title{
+  display: flex;
+  justify-content: flex-start;
+}
 /* ----- MEDIA RESPONSIVENESS ------ */
 @media only screen and (min-width: 991.98px) {
   .main-container{
@@ -281,5 +304,23 @@
   }
   .form-student-btn{
     max-width: 5rem;
+  }
+  .student-identity{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-info{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-form > .row{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 }
