@@ -55,8 +55,7 @@ app.use('/auth', authenticationRouter);
 app.use('/users', usersRouter);
 app.use('/students', studentRouter);
 app.use('/patients', patientRouter)
-app.use('/visitors', visitorRouter)
-
+app.use('/visitors', visitorRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

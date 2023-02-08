@@ -1,6 +1,13 @@
 const Student = require('../models/Student')
 const student = async (req, res) => {
-    res.render('pages/students', { title: 'Students' });
+    const students = await Student.find();
+    const data = {
+        title: 'Students', 
+        students, path:'students',
+        message:req.flash('message'), 
+        error:req.flash('error')
+    };
+    res.render('pages/students', data);
 }
 
 const newStudent = async (req, res) => {
@@ -38,10 +45,12 @@ const newStudent = async (req, res) => {
             !birthPlace,
             !contactPerson,
             !contactPersonNum,
-            !address){
-                req.flash('error', 'Please fill in all fields');
-                res.redirect('/error/401');
-            }
+            !address
+        ){
+            req.flash('error', 'Please fill in all fields');
+            res.redirect('/students');
+        }
+
         const student = await Student.create({
             firstName,
             lastName,
@@ -60,21 +69,22 @@ const newStudent = async (req, res) => {
             contactPerson,
             contactPersonNum,
             address,
-        })
+        });
         req.flash("message", "Student added.");
-        res.redirect('/students') 
+        res.redirect('/students');
     } catch (error) {
         console.log(error)
-       res.redirect('/error/500');
+        res.redirect('/error/500');
     }
 }
+
 const studentForm = async (req, res) => {
     res.render('pages/studentForm', { title: 'Student-Form' });
 }
+
 const studentFindings = async (req, res) => {
     res.render('pages/studentFindings', { title: 'Student Findings' });
 }
-
 
 module.exports = {
     student,

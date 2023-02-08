@@ -49,7 +49,6 @@ for (const th of theadRow) {
         let column = th.getAttribute('data-column')
         let order = th.getAttribute('data-order')
 
-
         if(order == 'desc'){
             th.setAttribute('data-order', 'asc')
             myArray = myArray.sort((a,b) => a[column] > b[column] ? 1 : -1)
@@ -62,25 +61,25 @@ for (const th of theadRow) {
   }
   buildTable(myArray)
 
-function buildTable(data){
-    let table = document.getElementById('myTable');
-        table.innerHTML = '';
-    for(let i = 0; i < data.length; i++){
-        let row =
-        `<tr>
-            <td data-label="ID No.">${data[i].id}</td>
-            <td data-label="Name">${data[i].name}</td>
-            <td data-label="Grade">${data[i].grade}</td>
-            <td data-label="Section">${data[i].section}</td>
-            <td>
-                <button class="btn btn-primary btn-sm  m-1"> <i class="fas fa-eye"></i> View<button>
-                <button class="btn btn-primary btn-sm m-1"> <i class="fas fa-edit"></i> Edit<button>
-            </td> 
-        </tr>`
+// function buildTable(data){
+//     let table = document.getElementById('myTable');
+//         table.innerHTML = '';
+//     for(let i = 0; i < data.length; i++){
+//         let row =
+//         `<tr>
+//             <td data-label="ID No.">${data[i].id}</td>
+//             <td data-label="Name">${data[i].name}</td>
+//             <td data-label="Grade">${data[i].grade}</td>
+//             <td data-label="Section">${data[i].section}</td>
+//             <td>
+//                 <button class="btn btn-primary btn-sm  m-1"> <i class="fas fa-eye"></i> View<button>
+//                 <button class="btn btn-primary btn-sm m-1"> <i class="fas fa-edit"></i> Edit<button>
+//             </td> 
+//         </tr>`
 
-        table.innerHTML += row
-    }
-};
+//         table.innerHTML += row
+//     }
+// };
 
 function myFunction() {
     let txtValue;
