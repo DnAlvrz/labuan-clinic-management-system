@@ -107,6 +107,18 @@ const updateStudent = async(req, res) => {
     }
 }
 
+const deleteStudent = async (req, res) => {
+	try{
+		const id = req.body.id
+		const student = await Student.findOne({where:{id}});
+		resident.destroy();
+		req.flash("message", "Student has been deleted")
+		res.redirect('/residents');
+	}catch (err){
+		console.log(err);
+		res.redirect('/error/500')
+	}
+}
 
 
 

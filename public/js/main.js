@@ -35,6 +35,7 @@ function myFunction() {
   }
 
 function updateStudent (student) {
+  document.getElementById('id').value = student._id;
   document.getElementById('firstname').value = student.firstName;
   document.getElementById('lastname').value = student.lastName;
   document.getElementById('middlename').value = student.middleName;
