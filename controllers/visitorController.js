@@ -1,5 +1,5 @@
 const visitor = async (req, res) => {
-    res.render('pages/visitors', { title: 'Visitors' });
+    res.render('pages/visitors', { title: 'Visitors', path:'visitors' });
 }
 
 

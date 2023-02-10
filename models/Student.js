@@ -35,6 +35,11 @@ const studentSchema = new mongoose.Schema({
         required: true, 
         unique: true,
     },
+    lrn : {
+        type:String,
+        required: true,
+        unique:true,
+    },
     birthPlace: {
         type:String,
         required: true,

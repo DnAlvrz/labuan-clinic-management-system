@@ -3,7 +3,8 @@ const student = async (req, res) => {
     const students = await Student.find();
     const data = {
         title: 'Students', 
-        students, path:'students',
+        students, 
+        path:'students',
         message:req.flash('message'), 
         error:req.flash('error')
     };
