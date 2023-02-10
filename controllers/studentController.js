@@ -31,8 +31,9 @@ const newStudent = async (req, res) => {
             contactPerson,
             contactPersonNum,
             address,
+			lrn
         } = req.body;
-
+		console.log(lrn)
         if (!firstName,
             !lastName,
             !middleName,
@@ -48,7 +49,7 @@ const newStudent = async (req, res) => {
             !contactPerson,
             !contactPersonNum,
             !address
-        ){
+        ) {
             req.flash('error', 'Please fill in all fields');
             res.redirect('/students');
         }
@@ -71,6 +72,7 @@ const newStudent = async (req, res) => {
             contactPerson,
             contactPersonNum,
             address,
+			lrn
         });
         req.flash("message", "Student added.");
         res.redirect('/students');
@@ -80,6 +82,34 @@ const newStudent = async (req, res) => {
     }
 }
 
+const updateStudent = async(req, res) => {
+    try {
+        const id = req.body.id;
+        const student = await Student.findOne({id});
+        if(!student) {
+            req.flash('error', 'Error! Student not found');
+            res.redirect('/students');
+            return;
+        } else {
+            for(const key of Object.keys(req.body)) {
+                student[key] = req.body[key]
+            }
+            student.dob.month = req.body.month;
+            student.dob.day = req.body.day;
+            student.dob.year = req.body.year;
+            await student.save();
+            req.flash('message', 'Student updated');
+            res.redirect('/students');
+        }
+    } catch (error) {
+        console.log(error)
+        res.redirect('/error/500');
+    }
+}
+
+
+
+
 const studentForm = async (req, res) => {
     res.render('pages/studentForm', { title: 'Student-Form' });
 }
@@ -87,12 +117,9 @@ const studentForm = async (req, res) => {
 const studentFindings = async (req, res) => {
     res.render('pages/studentFindings', { title: 'Student Findings' });
 }
+
 const studentRecord = async (req, res) => {
     res.render('pages/studentRecord', { title: 'Student Medical Record' });
-}
-
-const updateStudent = async( req,res) => {
-
 }
 
 module.exports = {
