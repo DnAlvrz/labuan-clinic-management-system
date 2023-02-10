@@ -35,6 +35,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 
+app.use(methodOverride('_method'));
+
 app.use(session({
   secret: 'super secret',
   cookie: {maxAge: 9000000},

@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#studentModal">
+    <button onclick="clearForm('studentForm','/students')"type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#studentModal">
       Create Student
     </button>
     
@@ -14,7 +14,7 @@
             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form method="POST" action="/students">
+            <form method="POST" action="/students" id="studentForm">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row mb-4">
                 <div class="col">
@@ -45,8 +45,8 @@
                 </div>
                 <div class="col">
                   <div class="form-outline">
-                    <input name="schoolId" type="text" id="lrn" class="form-control" required/>
-                    <label  class="form-label" for="lrn">School ID</label>
+                    <input name="lrn" type="text" id="schoolId" class="form-control" required/>
+                    <label  class="form-label" for="schoolId">School ID</label>
                   </div>
                 </div>
                 <div class="col">
@@ -59,14 +59,14 @@
               <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input name="grade" type="text" id="lrn" class="form-control" required/>
-                      <label class="form-label" for="lrn">Grade</label>
+                      <input name="grade" type="text" id="grade" class="form-control" required/>
+                      <label class="form-label" for="grade">Grade</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input name="section" type="text" id="schoolId" class="form-control" required/>
-                      <label class="form-label" for="schoolId">Section</label>
+                      <input name="section" type="text" id="section" class="form-control" required/>
+                      <label class="form-label" for="section">Section</label>
                     </div>
                   </div>
                 </div>

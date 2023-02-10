@@ -40,18 +40,30 @@ function updateStudent (student) {
   document.getElementById('middlename').value = student.middleName;
   document.getElementById('grade').value = student.grade;
   document.getElementById('schoolId').value = student.schoolId;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
-  document.getElementById('middlename').value = student.middleName;
+  document.getElementById('lrn').value = student.lrn;
+  document.getElementById('gender').value = student.gender;
+  document.getElementById('section').value = student.section;
+  document.getElementById('contactNum').value = student.contactNum;
+  document.getElementById('contactPersonNum').value = student.contactPersonNum;
+  document.getElementById('month').value = student.dob.month;
+  document.getElementById('day').value = student.dob.day;
+  document.getElementById('year').value = student.dob.year;
+  document.getElementById('birthPlace').value = student.birthPlace;
+  document.getElementById('contactPerson').value = student.contactPerson;
+  document.getElementById('address').value = student.address;
+  setForm('studentForm', '/students?_method=PUT' );
+}
 
+const setForm = (formId, formAction) => {
+  const studentForm = document.getElementById(formId);
+  console.log(studentForm)
+  studentForm.setAttribute('action', formAction);
+}
+
+
+const clearForm = (formId, formAction) => {
+  console.log(formId)
+  const form = document.getElementById(formId);
+  form.setAttribute('action', formAction);
+  form.reset();
 }

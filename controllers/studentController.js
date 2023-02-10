@@ -1,5 +1,6 @@
 const Student = require('../models/Student')
-const student = async (req, res) => {
+
+const studentList = async (req, res) => {
     const students = await Student.find();
     const data = {
         title: 'Students', 
@@ -90,10 +91,15 @@ const studentRecord = async (req, res) => {
     res.render('pages/studentRecord', { title: 'Student Medical Record' });
 }
 
+const updateStudent = async( req,res) => {
+
+}
+
 module.exports = {
-    student,
+    studentList,
     newStudent,
+    updateStudent,
     studentForm,
     studentFindings,
-    studentRecord
+    studentRecord,
 }
