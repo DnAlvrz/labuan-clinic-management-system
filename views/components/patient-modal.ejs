@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#createPatientModal">
       Create Patient
     </button>
     
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal modal-lg fade" id="createPatientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -49,12 +49,24 @@
                       <label class="form-label" for="schoolId">Section</label>
                     </div>
                   </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="lrn" class="form-control" />
+                      <label class="form-label" for="lrn">School ID</label>
+                    </div>
+                  </div>
                 </div>
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
                       <input type="text" id="lrn" class="form-control" />
-                      <label class="form-label" for="lrn">School ID</label>
+                      <label class="form-label" for="lrn">Recommendation</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="lrn" class="form-control" />
+                      <label class="form-label" for="lrn">Medication</label>
                     </div>
                   </div>
                 </div>
@@ -65,3 +77,4 @@
         </div>
       </div>
     </div>
+</div>

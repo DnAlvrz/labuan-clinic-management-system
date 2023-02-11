@@ -124,22 +124,22 @@ const deleteStudent = async (req, res) => {
 
 
 const studentForm = async (req, res) => {
-    res.render('pages/studentForm', { title: 'Student-Form' });
+	res.render('pages/studentForm', { title: 'Student-Form' });
 }
 
 const studentFindings = async (req, res) => {
-    res.render('pages/studentFindings', { title: 'Student Findings' });
+	res.render('pages/studentFindings', { title: 'Student Findings' });
 }
 
 const studentRecord = async (req, res) => {
-    res.render('pages/studentRecord', { title: 'Student Medical Record' });
+	res.render('pages/studentRecord', { title: 'Student Medical Record' });
 }
 
 module.exports = {
-    studentList,
-    newStudent,
-    updateStudent,
-    studentForm,
-    studentFindings,
-    studentRecord,
+	studentList,
+	newStudent,
+	updateStudent,
+	studentForm,
+	studentFindings,
+	studentRecord,
 }

@@ -15,7 +15,6 @@ const studentRouter = require('./routes/students');
 const patientRouter = require('./routes/patients');
 const visitorRouter = require('./routes/visitor');
 const medicalRecRouter = require('./routes/medicalRecord');
-const addedPatientRouter = require('./routes/addedPatient');
 
 
 const Student  = require('./models/Student');
@@ -61,7 +60,6 @@ app.use('/students', studentRouter);
 app.use('/patients', patientRouter)
 app.use('/visitors', visitorRouter);
 app.use('/medicalRecord', medicalRecRouter);
-app.use('/addedPatient', addedPatientRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
