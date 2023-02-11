@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {patient} = require('../controllers/patientController')
+const {patient,} = require('../controllers/patientController')
 
 
 router.get('/',patient);

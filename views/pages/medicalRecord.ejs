@@ -1,10 +1,7 @@
 <%- include('../includes/header'); %>
 <div class="container-flud main-container">
   <%- include('../includes/menubar'); %>
-  <div class="patient">
-    <div class="create-button">
-      <%- include('../components/patient-modal') %>
-    </div>
+  <div class="medicalRecord">
     <div class="search-button">
       <div class="input-group">
         <div class="form-outline">
@@ -24,12 +21,22 @@
             <th scope="col" class="th" data-column="grade" data-order="desc">
               Grade</th>
             <th scope="col" class="th" data-column="section" data-order="desc">
-                Section</th>
+                Date</th>
                 <th scope="col" class="th" data-column="action" data-order="desc">
                   Action</th>
         </thead>
         <tbody id="myTable">
-
+            <td data-label="ID No."><a href="/students/record">asdasdasd</a></td>
+            <td data-label="Name">asdasd</td>
+            <td data-label="Grade">8</td>
+            <td data-label="Date">June 28, 1999</td>
+            <td>
+                <button class="btn btn-primary btn-sm  m-1"> <i class="fas fa-eye"></i> View<button>
+                <button class="btn btn-primary btn-sm m-1"> 
+                  <i class="fas fa-edit"></i > Edit
+                <button>
+            </td>
+        </tbody>
         </tbody>
       </table>
     </div>

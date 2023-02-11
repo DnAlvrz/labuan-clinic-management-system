@@ -101,7 +101,9 @@
 .dashboard-logo > i {
   font-size: 3em;
 }
-.student{
+.student,
+.medicalRecord,
+.patient{
   padding: 2rem;
 }
 .search-button{
@@ -207,6 +209,87 @@
 .student-details-title{
   display: flex;
   justify-content: flex-start;
+}
+.form-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: #000;
+}
+.form-card-title{
+  margin-top: 1.5rem;
+  color: #000;
+  border: solid 0.2rem #000;
+  text-align: center;
+}
+.form-title{
+  text-align: center;
+}
+.form-logo > img{
+  display: block;
+  max-width: 8rem;
+  padding: 1rem;
+}
+.header-content{
+  display: flex;
+  gap: 5rem;
+}
+.header-content > section{
+  padding-top: 1rem;
+  width: 50%;
+}
+.form-card-1,
+.form-card-2, 
+.form-card-3, 
+.form-card-4, 
+.form-card-5,
+.form-card-6{
+  display: flex;
+  flex-direction: row;
+}
+.form-card-2, .form-card-5{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.form-card-2{
+  margin-left: 4rem;
+}
+.form-card-1 > .line,
+.form-card-4 > .line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.inner-card{
+  margin-right: 1.5rem;
+}
+.form-card-1 > .line,
+.form-card-3 > .line,
+.form-card-4 > .line,
+.form-card-6 > .line{
+  border-bottom: 2px solid #000;
+  margin-left: 1rem;
+  width: 100%;
+}
+.form-card-4 > label{
+  margin-top: 1rem;
+  width: 10rem;
+}
+.form-card-5{
+  margin-left: 7rem;
+}
+.form-card-6 > label{
+  margin-top: 1rem;
+  width: 7rem;
+}
+.form-card-3{
+  padding-top: 0.5rem;
+}
+.form-card-3 > .line{
+  width: 8rem;
+  text-align: center;
 }
 /* ----- MEDIA RESPONSIVENESS ------ */
 @media only screen and (min-width: 991.98px) {

@@ -31,6 +31,7 @@ const newStudent = async (req, res) => {
             contactPerson,
             contactPersonNum,
             address,
+            lrn
         } = req.body;
 
         if (!firstName,
@@ -47,7 +48,8 @@ const newStudent = async (req, res) => {
             !birthPlace,
             !contactPerson,
             !contactPersonNum,
-            !address
+            !address,
+            !lrn
         ){
             req.flash('error', 'Please fill in all fields');
             res.redirect('/students');
@@ -66,6 +68,7 @@ const newStudent = async (req, res) => {
                 day,
                 year
             },
+            lrn,
             birthPlace,
             contactNum,
             contactPerson,
