@@ -106,7 +106,7 @@
 .patient{
   padding: 2rem;
 }
-.create-button{
+.create-patient-button{
   display: flex;
   flex-direction: row;
 }
