@@ -249,7 +249,8 @@
 .form-card-4, 
 .form-card-5,
 .form-card-6,
-.form-card-7{
+.form-card-7,
+.form-card-8{
   display: flex;
   flex-direction: row;
 }
@@ -274,7 +275,8 @@
 .form-card-3 > .line,
 .form-card-4 > .line,
 .form-card-6 > .line,
-.form-card-7 > .line{
+.form-card-7 > .line,
+.form-card-8 > .line{
   border-bottom: 2px solid #000;
   margin-left: 1rem;
   width: 100%;
@@ -292,6 +294,12 @@
 .form-card-6 > .line{
   text-align: center;
   margin-left: 1rem;
+}
+.form-card-8 > .line{
+  text-align: center;
+}
+.form-card-8 > label{
+  width: 11rem;
 }
 .form-card-3{
   padding-top: 0.5rem;
