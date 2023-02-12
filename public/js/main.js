@@ -68,3 +68,13 @@ const clearForm = (formId, formAction) => {
   form.setAttribute('action', formAction);
   form.reset();
 }
+
+const addStudentPatient  = (student) => {
+  document.getElementById('studentId').value = student._id;
+  document.getElementById('firstName').value = student.firstName;
+  document.getElementById('middleName').value = student.middleName;
+  document.getElementById('lastName').value = student.lastName;
+  document.getElementById('grade').value = student.grade;
+  document.getElementById('section').value = student.section;
+  document.getElementById('schoolId').value = student.schoolId;
+};

@@ -1,21 +1,30 @@
 const Patient = require('../models/Patient');
+const Student = require('../models/Student');
 
 const patientList = async (req, res) => {
-    const students = await Patient.find();
-    const data = {
-        title: 'Patients', 
-        students, 
-        path:'patients',
-        message:req.flash('message'), 
-        error:req.flash('error')
-    };
-    res.render('pages/patients', data);
+    try {
+        const patients = await Patient.find();
+        const students = await Student.find();
+        const data = {
+            title: 'Patients', 
+            patients, 
+            students,
+            path:'patients',
+            message:req.flash('message'), 
+            error:req.flash('error')
+        };
+        res.render('pages/patients', data);
+    } catch (error) {
+        console.log(error);
+        req.flash('error', 'Something went wrong');
+        res.redirect('/patients')
+    }
 }
 
 const createPatient = async (req, res) => {
     try {
         const {
-            userId,
+            studentId,
             schoolId,
             firstName,
             lastName,
@@ -28,29 +37,26 @@ const createPatient = async (req, res) => {
         } = req.body;
     
         if (
-            !userId,
             !schoolId,
             !firstName,
             !lastName,
             !middleName,
-            !grade,
-            !section,
             !description,
             !medication,
             !recommendation
         ){
-            req.flash('error', 'Please fill in all fields');
+            req.flash('error', 'Please fill all required fields');
             console.log('asd')
             res.redirect('/patients');
-        } else {
+        } else {            
             const patient = await Patient.create({
-                user: userId ? userId : null,
+                student: studentId ? studentId : null,
                 schoolId,
                 firstName,
                 lastName,
                 middleName,
-                grade,
-                section,
+                grade: grade ? grade : '',
+                section : section ? section : '',
                 description,
                 medication,
                 recommendation
@@ -60,7 +66,8 @@ const createPatient = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.redirect('/error/500');
+        req.flash('error', 'Something went wrong');
+        res.redirect('/patients')
     }
     
 }
@@ -71,15 +78,21 @@ const updatePatient = async (req, res) => {
         const patient = await Patient.findOne({_id:id});
         if(!patient) {
             req.flash('error', 'Patient not found');
-            res.redirect('/patient]');
+            res.redirect('/patients');
             return;
+        
         } else {
-            await student.save();
+            for(const key of Object.keys(req.body)) {
+                patient[key] = req.body[key]
+            }
+            await patient.save();
             req.flash('message', 'Patient updated');
-            res.redirect('/patient');
+            res.redirect('/patients');
         }
     } catch (error) {
-        
+        console.log(error);
+        req.flash('error', 'Something went wrong');
+        res.redirect('/patients')
     }
 }
 

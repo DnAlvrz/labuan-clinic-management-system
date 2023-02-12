@@ -15,6 +15,7 @@
           </div>
           <div class="modal-body">
             <form method="POST" action="/patients" id="patientForm">
+              <input name="studentId" type="hidden" id="studentId"/>
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row mb-4">
                 <div class="col">
@@ -25,14 +26,14 @@
                 </div>
                 <div class="col">
                   <div class="form-outline">
-                    <input name="lastName" type="text" id="lastname" class="form-control" required/>
-                    <label class="form-label" for="lastname">Last name</label>
+                    <input name="lastName" type="text" id="lastName" class="form-control" required/>
+                    <label class="form-label" for="lastName">Last name</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-outline">
-                    <input name="middleName" type="text" id="middlename" class="form-control" required/>
-                    <label class="form-label" for="middlename">Middle name</label>
+                    <input name="middleName" type="text" id="middleName" class="form-control" required/>
+                    <label class="form-label" for="middleName">Middle name</label>
                   </div>
                 </div>
               </div>
