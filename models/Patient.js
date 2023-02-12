@@ -8,15 +8,19 @@ const patientSchema = new mongoose.Schema({
     },
     schoolId: {
         type:String,
+        required: true
     },
     firstName: {
         type:String,
+        required: true
     },
     lastName: {
         type:String, 
+        required: true
     },
     middleName: {
         type:String,
+        required: true
     },
     grade: {
         type:String,
