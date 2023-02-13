@@ -39,6 +39,25 @@
             </th>
         </thead>
         <tbody id="myTable">
+          <% if(patients) { %>
+          <% patients.forEach(patient => { %>
+            <tr>
+              <td><%= patient.schoolId %></td>
+              <td>
+                <%= patient.firstName %>
+                <%= patient.middleName[0] %>
+                <%= patient.lastName %>
+              </td>
+              <td><%= patient.grade%></td>
+              <td><%= patient.section%></td>
+              <td>
+                <button class="btn btn-primary">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          <% }) %>
+          <% } %>
         </tbody>
       </table>
     </div>
@@ -55,6 +74,5 @@
     </div>
   </div>
 </div>
-
 
 <%- include('../includes/footer'); %>

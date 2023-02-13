@@ -36,34 +36,41 @@ const createPatient = async (req, res) => {
             recommendation
         } = req.body;
     
-        if (
-            !schoolId,
-            !firstName,
-            !lastName,
-            !middleName,
-            !description,
-            !medication,
+        if (!schoolId || 
+            !firstName || 
+            !lastName || 
+            !middleName || 
+            !description ||
+            !medication ||
             !recommendation
         ){
             req.flash('error', 'Please fill all required fields');
             console.log('asd')
             res.redirect('/patients');
-        } else {            
-            const patient = await Patient.create({
-                student: studentId ? studentId : null,
-                schoolId,
-                firstName,
-                lastName,
-                middleName,
-                grade: grade ? grade : '',
-                section : section ? section : '',
-                description,
-                medication,
-                recommendation
-            });
-            req.flash('message', 'Patient added');
-            res.redirect('/patients')
-        }
+            return
+        } 
+        if(studentId){
+            const student = await Student.findOne({_id:studentId});
+            if(!student){ 
+                req.flash('error', 'Student not found')
+                res.redirect('/patients');
+                return;
+            }
+        }   
+        const patient = await Patient.create({
+            student: studentId ? studentId : null,
+            schoolId,
+            firstName,
+            lastName,
+            middleName,
+            grade: grade ? grade : '',
+            section : section ? section : '',
+            description,
+            medication,
+            recommendation
+        });
+        req.flash('message', 'Patient added');
+        res.redirect('/patients')
     } catch (error) {
         console.log(error);
         req.flash('error', 'Something went wrong');
@@ -95,7 +102,6 @@ const updatePatient = async (req, res) => {
         res.redirect('/patients')
     }
 }
-
 
 module.exports = {
     patientList,
