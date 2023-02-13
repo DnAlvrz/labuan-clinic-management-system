@@ -1,9 +1,8 @@
 <div class="container-fluid">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#createPatientModal">
+    <button type="button" onclick="clearForm('patientForm', '/patients')" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#createPatientModal">
       Create Patient
     </button>
-    
 
     <!-- Modal -->
     <div class="modal modal-lg fade" id="createPatientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -15,6 +14,7 @@
           </div>
           <div class="modal-body">
             <form method="POST" action="/patients" id="patientForm">
+              <input name="patientId" type="hidden" id="patientId"/>
               <input name="studentId" type="hidden" id="studentId"/>
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row mb-4">
@@ -74,8 +74,8 @@
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <textarea name="description" class="form-control" id="textAreaExample" rows="4" required></textarea>
-                      <label class="form-label" for="textAreaExample">Description</label>
+                      <textarea name="description" class="form-control" id="description" rows="4" required></textarea>
+                      <label class="form-label" for="description">Description</label>
                     </div>
                   </div>
                 </div>

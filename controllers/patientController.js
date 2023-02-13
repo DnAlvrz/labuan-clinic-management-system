@@ -81,13 +81,12 @@ const createPatient = async (req, res) => {
 
 const updatePatient = async (req, res) => {
     try {
-        const id = req.body.id;
+        const id = req.body.patientId;
         const patient = await Patient.findOne({_id:id});
         if(!patient) {
             req.flash('error', 'Patient not found');
             res.redirect('/patients');
             return;
-        
         } else {
             for(const key of Object.keys(req.body)) {
                 patient[key] = req.body[key]

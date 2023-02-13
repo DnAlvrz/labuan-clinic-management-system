@@ -51,7 +51,12 @@
               <td><%= patient.grade%></td>
               <td><%= patient.section%></td>
               <td>
-                <button class="btn btn-primary">
+                <button  
+                  data-mdb-toggle="modal" 
+                  data-mdb-target="#createPatientModal"
+                  class="btn btn-primary"
+                  onclick="updatePatient(<%=JSON.stringify(patient)%>)"
+                >
                   Edit
                 </button>
               </td>
