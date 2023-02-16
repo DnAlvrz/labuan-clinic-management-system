@@ -64,6 +64,10 @@ const studentSchema = new mongoose.Schema({
             required: true,
         },
     },
+    medical: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'MedicalRecord',
+    }]
 })
 
 module.exports = mongoose.model('Student',studentSchema)
