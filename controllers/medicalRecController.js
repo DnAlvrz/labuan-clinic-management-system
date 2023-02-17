@@ -1,5 +1,13 @@
+const MedicalRecord = require('../models/MedicalRecord');
+
 const medicalRec = async (req, res) => {
-    res.render('pages/medicalRecord', { title: 'Patient', path:'medicalRecord'});
+    try {
+        const medicalRecords = await MedicalRecord.find();
+        res.render('pages/medicalRecord', { title: 'Patient', path:'medicalRecord'});
+    } catch (error) {
+        console.log(error);
+        res.render('error');
+    }
 }
 
 const medicalForm = async (req, res) => {
