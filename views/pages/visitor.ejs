@@ -1,15 +1,10 @@
 <%- include('../includes/header'); %>
 <div class="container-flud main-container">
   <%- include('../includes/menubar'); %>
-  <div class="patient">
-    <div class="create-patient-button">
-      <div class="addStudent-btn">
-        <%- include('../components/addStudent-modal') %>
-      </div>
-      <div class="patient-btn">
-        <%- include('../components/patient-modal') %>
-      </div>
-    </div>
+  <div class="visitor">
+    <a href="/visitors/form" class="btn btn-primary"">
+      New visitor
+    </a>
     <div class="search-button">
       <div class="input-group">
         <div class="form-outline">
@@ -18,55 +13,36 @@
         </div>
       </div>
     </div>
-    <div class="patient-list">
+    <div class="visitor-list">
       <table class="table" id="table" >
         <thead>
           <tr class="theadRow">
             <th scope="col" class="th" data-column="id" data-order="desc">
-              ID No.
-            </th>
+              Full Name</th>
             <th scope="col" class="th" data-column="name" data-order="desc">
-              Name
-            </th>
+              Date</th>
             <th scope="col" class="th" data-column="grade" data-order="desc">
-              Grade
-            </th>
+              Contact No.</th>
             <th scope="col" class="th" data-column="section" data-order="desc">
-                Section
-            </th>
-            <th scope="col" class="th" data-column="action" data-order="desc">
-              Action
-            </th>
+                Temp</th>
+                <th scope="col" class="th" data-column="action" data-order="desc">
+                  Action</th>
         </thead>
         <tbody id="myTable">
-          <% if(patients) { %>
-          <% patients.forEach(patient => { %>
-            <tr>
-              <td><%= patient.schoolId %></td>
-              <td>
-                <%= patient.firstName %>
-                <%= patient.middleName[0] %>
-                <%= patient.lastName %>
-              </td>
-              <td><%= patient.grade%></td>
-              <td><%= patient.section%></td>
-              <td>
-                <button  
-                  data-mdb-toggle="modal" 
-                  data-mdb-target="#createPatientModal"
-                  class="btn btn-primary"
-                  onclick="updatePatient(<%=JSON.stringify(patient)%>)"
-                >
-                  Edit
-                </button>
-              </td>
-            </tr>
-          <% }) %>
-          <% } %>
+            <td data-label="ID No.">
+              <a href="/students/record">cics-123</a>
+            </td>
+            <td data-label="Name">asdasd</td>
+            <td data-label="Grade">8</td>
+            <td data-label="Date">June 28, 1999</td>
+            <td>
+                <button class="btn btn-primary btn-sm  m-1"> <i class="fas fa-eye"></i> View</button>
+            </td>
+        </tbody>
         </tbody>
       </table>
     </div>
-    <div class="patient-page">
+    <div class="visitor-page">
       <nav class="pt-2" aria-label="Page navigation">
         <ul class="pagination">
           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -79,5 +55,6 @@
     </div>
   </div>
 </div>
+
 
 <%- include('../includes/footer'); %>

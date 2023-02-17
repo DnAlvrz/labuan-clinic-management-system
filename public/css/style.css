@@ -103,7 +103,8 @@
 }
 .student,
 .medicalRecord,
-.patient{
+.patient,
+.visitor{
   padding: 2rem;
 }
 .create-patient-button{
@@ -113,13 +114,19 @@
 .search-button{
   padding-top: 1.5rem;
 }
-.student-list{
+.student-list,
+.medicalRecord-list,
+.patient-list,
+.visitor-list{
   padding-top: 2rem;
 }
 .search{
   max-width: 20rem;
 }
-.student-page{
+.student-page,
+.medicalRecord-page,
+.patient-page,
+.visitor-page{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -213,6 +220,9 @@
 .student-details-title{
   display: flex;
   justify-content: flex-start;
+}
+.space{
+  margin-left: 1rem;
 }
 /* ----- MEDIA RESPONSIVENESS ------ */
 @media only screen and (min-width: 991.98px) {
