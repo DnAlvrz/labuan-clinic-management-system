@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-const {visitor, visitorForm} = require('../controllers/visitorController')
+const {visitorList, visitorForm} = require('../controllers/visitorController')
 
 
-router.get('/',visitor);
+router.get('/',visitorList);
 router.get('/form',visitorForm);
 
 module.exports = router;

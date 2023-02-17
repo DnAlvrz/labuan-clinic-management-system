@@ -79,7 +79,7 @@ const newMedicalRecord = async(req,res) => {
                 bloodPressure,
                 heartRate,
                 pulseRate,
-                height,
+                height, 
                 Weight,
                 nutStatBM,
                 nutStatHeight,
