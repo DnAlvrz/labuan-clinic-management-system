@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-const {patient,} = require('../controllers/patientController')
+const {patientList, createPatient, updatePatient} = require('../controllers/patientController')
 
 
-router.get('/',patient);
+router.get('/',patientList);
+router.post('/', createPatient);
+router.put('/', updatePatient);
 
 module.exports = router;

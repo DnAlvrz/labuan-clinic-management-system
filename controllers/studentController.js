@@ -33,7 +33,6 @@ const newStudent = async (req, res) => {
             address,
             lrn
         } = req.body;
-		console.log(lrn)
         if (!firstName,
             !lastName,
             !middleName,

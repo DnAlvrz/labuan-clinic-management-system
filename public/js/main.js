@@ -68,3 +68,32 @@ const clearForm = (formId, formAction) => {
   form.setAttribute('action', formAction);
   form.reset();
 }
+
+const addStudentPatient  = (student) => {
+  document.getElementById('studentId').value = student._id;
+  document.getElementById('firstName').value = student.firstName;
+  document.getElementById('middleName').value = student.middleName;
+  document.getElementById('lastName').value = student.lastName;
+  document.getElementById('grade').value = student.grade;
+  document.getElementById('section').value = student.section;
+  document.getElementById('schoolId').value = student.schoolId;
+};
+
+
+const updatePatient = (patient) => {
+  if(patient.student) {
+    document.getElementById('studentId').value = patient.student;
+  }
+  document.getElementById('patientId').value = patient._id;
+  document.getElementById('firstName').value = patient.firstName;
+  document.getElementById('middleName').value = patient.middleName;
+  document.getElementById('lastName').value = patient.lastName;
+  document.getElementById('grade').value = patient.grade;
+  document.getElementById('section').value = patient.section;
+  document.getElementById('schoolId').value = patient.schoolId;
+  document.getElementById('recommendation').value = patient.recommendation;
+  document.getElementById('medication').value = patient.medication;
+  document.getElementById('description').value = patient.description;
+  setForm('patientForm', '/patients?_method=PUT' );
+
+}
