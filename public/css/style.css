@@ -243,75 +243,7 @@
   padding-top: 1rem;
   width: 50%;
 }
-.form-card-1,
-.form-card-2, 
-.form-card-3, 
-.form-card-4, 
-.form-card-5,
-.form-card-6,
-.form-card-7,
-.form-card-8{
-  display: flex;
-  flex-direction: row;
-}
-.form-card-2, .form-card-5{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.form-card-2{
-  margin-left: 4rem;
-}
-.form-card-1 > .line,
-.form-card-4 > .line{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.inner-card{
-  margin-right: 1.5rem;
-}
-.form-card-1 > .line,
-.form-card-3 > .line,
-.form-card-4 > .line,
-.form-card-6 > .line,
-.form-card-7 > .line,
-.form-card-8 > .line{
-  border-bottom: 2px solid #000;
-  margin-left: 1rem;
-  width: 100%;
-}
-.form-card-4 > label{
-  margin-top: 1rem;
-  width: 10rem;
-}
-.form-card-5{
-  margin-left: 7rem;
-}
-.form-card-6 > label{
-  width: 9rem;
-}
-.form-card-6 > .line{
-  text-align: center;
-  margin-left: 1rem;
-}
-.form-card-8 > .line{
-  text-align: center;
-}
-.form-card-8 > label{
-  width: 11rem;
-}
-.form-card-3{
-  padding-top: 0.5rem;
-}
-.form-card-7 > .line{
-  text-align: center;
-  margin-left: 3.2rem;
-}
-.form-card-3 > .line{
-  width: 8rem;
-  text-align: center;
-}
+
 /* ----- MEDIA RESPONSIVENESS ------ */
 @media only screen and (min-width: 991.98px) {
   .main-container{

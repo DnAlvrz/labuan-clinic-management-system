@@ -86,7 +86,7 @@ const newStudent = async (req, res) => {
 const updateStudent = async(req, res) => {
     try {
         const id = req.body.id;
-        const student = await Student.findOne({id});
+        const student = await Student.findOne({_id:id});
         if(!student) {
             req.flash('error', 'Error! Student not found');
             res.redirect('/students');

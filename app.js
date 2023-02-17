@@ -8,6 +8,8 @@ const connectDatabase = require('./config/db');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
+
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authenticationRouter = require('./routes/auth');

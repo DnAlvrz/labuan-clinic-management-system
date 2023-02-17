@@ -282,69 +282,115 @@
                 </div>
             </div>
             <div class="row mb-4 form-row">
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Nutritional Status(NS)(BM/Wt-for-Age)</label>
-                    </div>
+                <div class="col form-col">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Nutritional Status(NS)(BM/Wt-for-Age)</option>
+                        <option value="Normal Weight">Normal Weight</option>
+                        <option value="Wasted/Underweight">Wasted/Underweight</option>
+                        <option value="Severely Wasted/Underwieght">Severely Wasted/Underwieght</option>
+                        <option value="Overweight">Overweight</option>
+                        <option value="Obese">Obese</option>
+                    </select>
                 </div>
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Nutritional Status(NS)(Height-for-Age)</label>
-                    </div>
+                <div class="col form-coll">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Nutritional Status(NS)(Height-for-Age)</option>
+                        <option value="Normal Height">Normal Height</option>
+                        <option value="Stunted">Stunted</option>
+                        <option value="Severely Stunted">Severely Stunted</option>
+                        <option value="Tall">Tall</option>
+                    </select>
                 </div>
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Vision Screening using appropriate chart</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Auditory Screening(Tuning Fork)</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-4 form-row">
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Skin/Scalp</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Eyes/Ears/Nose</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Mouth/Throat/Neck</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Lungs//Heart</label>
-                    </div>
+                <div class="col form-col">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Vision Screening using appropriate chart</option>
+                        <option value="Passed">Passed</option>
+                        <option value="Failed">Failed</option>
+                    </select>
                 </div>
             </div>
             <div class="row mb-4 form-row">
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Abdomen</label>
-                    </div>
+                <div class="col form-col">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Auditory Screening(Tuning Fork)</option>
+                        <option value="Passed">Passed</option>
+                        <option value="Failed">Failed</option>
+                    </select>
                 </div>
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="contactNo" class="form-control" required  />
-                        <label class="form-label" for="contactNo">Deformities</label>
-                    </div>
+                <div class="col form-col">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Skin/Scalp</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Presence of Lice">Presence of Lice</option>
+                        <option value="Redness of Skin">Redness of Skin</option>
+                        <option value="White Spots">White Spots</option>
+                        <option value="Flaky Skin">Flaky Skin</option>
+                        <option value="Impetigo/boil">Impetigo/boil</option>
+                        <option value="Hematoma">Hematoma</option>
+                        <option value="Bruises/Injuries">Bruises/Injuries</option>
+                        <option value="Itchiness">Itchiness</option>
+                        <option value="Skin Lessions">Skin Lessions</option>
+                        <option value="Acne/Pimple">Acne/Pimple</option>
+                    </select>
+                </div>
+                <div class="col form-col">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Eyes/Ears/Nose</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Stye">Stye</option>
+                        <option value="Eye Redness">Eye Redness</option>
+                        <option value="Ocular Misalignment">Ocular Misalignment</option>
+                        <option value="Pale Conjunctiva">Pale Conjunctiva</option>
+                        <option value="Ear discharge">Ear discharge</option>
+                        <option value="Impacted Cerumen">Impacted Cerumen</option>
+                        <option value="Mucus Discharge">Mucus Discharge</option>
+                        <option value="Nose Bleeding (Epistaxis)">Nose Bleeding (Epistaxis)</option>
+                        <option value="Eye Discharge">Eye Discharge</option>
+                        <option value="Matted Eyelashes">Matted Eyelashes</option>
+                        <option value="Other, Specify">Other, Specify</option>
+                    </select>
+                </div>
+                <div class="col form-col">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Mouth/Throat/Neck</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Enlarged tonsils">Enlarged tonsils</option>
+                        <option value="Presence of lesions">Presence of lesions</option>
+                        <option value="inflamed pharynx<">inflamed pharynx</option>
+                        <option value="Enlarged lymphnodes<">Enlarged lymphnodes</option>
+                        <option value="Other, Specify">Other, Specify</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-4 form-row">
+                <div class="col form-col">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Lungs//Heart</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Rales">Rales</option>
+                        <option value="Wheeze">Wheeze</option>
+                        <option value="Murmur">Murmur</option>
+                        <option value="Irregular heart rate">Irregular heart rate</option>
+                        <option value="Other, Specify">Other, Specify</option>
+                    </select>
+                </div>
+                <div class="col form-col">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Abdomen</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Distended">Distended</option>
+                        <option value="Abdominal Pain">Abdominal Pain</option>
+                        <option value="Tenderness">Tenderness</option>
+                        <option value="Dysmenorrhea">Dysmenorrhea</option>
+                        <option value="Other, Specify">Other, Specify</option>
+                    </select>
+                </div>
+                <div class="col form-col">
+                    <select class="select form-select-btn" required >
+                        <option value="" disabled selected>Deformities</option>
+                        <option value="Aquired">Aquired</option>
+                        <option value="Congenital (Specify)">Congenital (Specify)</option>
+                    </select>
                 </div>
                 <div class="col">
                     <div class="form-check">
@@ -400,221 +446,7 @@
                         <label class="form-label" for="contactNo"><strong>Examined by:</strong></label>
                     </div>
                 </div>
-                <div class="col"></div>
-            </div>
-            <hr>
-            <div class="row mb-4 form-row">
-                <div class="skin-scalp">
-                    <label for="">Skin/Scalp</label>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Normal</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Presence of Lice</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Redness of Skin</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">White Spots</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-4 form-row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Fleaky Skin</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Impetigo/Boil</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Hematoma</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Bruises/Injuries</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-4 form-row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Itchiness</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Skin Lessions</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Acne/Pimple</label>
-                    </div>
-                </div>
-                <div class="col"></div>
-            </div>
-            <hr>
-            <div class="row mb-4 form-row">
-                <div class="skin-scalp">
-                    <label for="">Eye/Ear/Nose</label>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Normal</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Stye</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Eye Redness</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Ocular Misalignment</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-4 form-row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Pale Conjunctiva</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Ear discharge</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Impacted cerumen</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Mucus discharge</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-4 form-row">
-
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Nose Bleeding(Epistexis)</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Eye discharge</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Matted Eyelashes</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <div class="form-outline">
-                            <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-                            <label class="form-label" for="textAreaExample">Others, specify</label>
-                          </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row mb-4 form-row">
-                <div class="skin-scalp">
-                    <label for="">Mouth/Neck/Throat</label>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Normal</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Enlarged tonsils</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Presence of lesions</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Infamed pharynx</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">Enlarged lymphnodes</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-4 form-row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <div class="form-outline">
-                            <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-                            <label class="form-label" for="textAreaExample">Others, specify</label>
-                          </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="col"></div>
-                </div>
+                <div class="col leave blank to make space"></div>
             </div>
                 <button type="submit" class="btn btn-primary findings-student-btn w-100">Submit</button>
           </form>
