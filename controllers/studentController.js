@@ -127,7 +127,7 @@ const studentForm = async (req, res) => {
 }
 
 const studentFindings = async (req, res) => {
-	res.render('pages/studentFindings', { title: 'Student Findings' });
+	res.render('pages/student-findings', { title: 'Student Findings' });
 }
 
 const studentRecord = async (req, res) => {
