@@ -1,22 +1,30 @@
 <div class="container-fluid">
-    <!-- Button trigger modal -->
-    <button type="button" onclick="clearForm('patientForm', '/patients')" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#createPatientModal">
+
+    <button 
+      type="button" 
+      onclick="clearForm('patientForm', '/patients')" 
+      class="btn btn-primary" 
+      data-mdb-toggle="modal" 
+      data-mdb-target="#createPatientModal">
       Create Patient
     </button>
 
-    <!-- Modal -->
-    <div class="modal modal-lg fade" id="createPatientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Patient Form</h5>
-            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form method="POST" action="/patients" id="patientForm">
-              <input name="patientId" type="hidden" id="patientId"/>
-              <input name="studentId" type="hidden" id="studentId"/>
-              <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div 
+    class="modal modal-lg fade" 
+    id="createPatientModal" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Patient Form</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="/patients" id="patientForm">
+            <input name="patientId" type="hidden" id="patientId"/>
+            <input name="studentId" type="hidden" id="studentId"/>
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
@@ -40,17 +48,19 @@
               <div class="row mb-4">
                 <div class="col">
                   <select class="select form-select-btn" required >
-                      <option value="" disabled selected>Grade Level</option>
-                      <option value="Grade 7<">Grade 7</option>
-                      <option value="Grade 8">Grade 8</option>
-                      <option value="Grade 9">Grade 9</option>
-                      <option value="Grade 10<">Grade 10</option>
-                      <option value="Grade 11">Grade 11</option>
-                      <option value="Grade 12">Grade 12</option>
+                    <option value="" disabled selected>Grade Level</option>
+                    <option value="Grade 7<">Grade 7</option>
+                    <option value="Grade 8">Grade 8</option>
+                    <option value="Grade 9">Grade 9</option>
+                    <option value="Grade 10<">Grade 10</option>
+                    <option value="Grade 11">Grade 11</option>
+                    <option value="Grade 12">Grade 12</option>
                   </select>
+                </div>
               </div>
-              <div class="col form-col">
-                <select class="select form-select-btn">
+              <div class="row mb-4">
+                <div class="col form-col">
+                  <select class="select form-select-btn">
                     <option value="" disabled selected>Section</option>
                     <option value="1940">G7 - Humility</option>
                     <option value="1940">G7 - Kindness</option>
@@ -104,40 +114,42 @@
                     <option value="1940">G12 FFP - Naputo</option>
                   </select>
                 </div>
-                  <div class="col">
-                    <div class="form-outline">
-                      <input name="schoolId" type="text" id="schoolId" class="form-control" />
-                      <label class="form-label" for="schoolId">School ID</label>
-                    </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input name="schoolId" type="text" id="schoolId" class="form-control" />
+                    <label class="form-label" for="schoolId">School ID</label>
                   </div>
                 </div>
-                <div class="row mb-4">
-                  <div class="col">
-                    <div class="form-outline">
-                      <input name="recommendation" type="text" id="recommendation" class="form-control" required/>
-                      <label class="form-label" for="recommendation">Recommendation</label>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-outline">
-                      <input name="medication" type="text" id="medication" class="form-control" />
-                      <label class="form-label" for="medication">Medication</label>
-                    </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input name="recommendation" type="text" id="recommendation" class="form-control" required/>
+                    <label class="form-label" for="recommendation">Recommendation</label>
                   </div>
                 </div>
-                <div class="row mb-4">
-                  <div class="col">
-                    <div class="form-outline">
-                      <textarea name="description" class="form-control" id="description" rows="4" required></textarea>
-                      <label class="form-label" for="description">Description</label>
-                    </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input name="medication" type="text" id="medication" class="form-control" />
+                    <label class="form-label" for="medication">Medication</label>
                   </div>
                 </div>
-              <!-- Submit button -->
+              </div>
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <textarea name="description" class="form-control" id="description" rows="4" required></textarea>
+                    <label class="form-label" for="description">Description</label>
+                  </div>
+                </div>
+              </div>
+
               <button type="submit" class="btn btn-primary btn-blockmb-4">Submit</button>
-            </form>
-          </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 </div>
