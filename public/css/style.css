@@ -214,36 +214,6 @@
   display: flex;
   justify-content: flex-start;
 }
-.form-header{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  color: #000;
-}
-.form-card-title{
-  margin-top: 1.5rem;
-  color: #000;
-  border: solid 0.2rem #000;
-  text-align: center;
-}
-.form-title{
-  text-align: center;
-}
-.form-logo > img{
-  display: block;
-  max-width: 8rem;
-  padding: 1rem;
-}
-.header-content{
-  display: flex;
-  gap: 5rem;
-}
-.header-content > section{
-  padding-top: 1rem;
-  width: 50%;
-}
-
 /* ----- MEDIA RESPONSIVENESS ------ */
 @media only screen and (min-width: 991.98px) {
   .main-container{
