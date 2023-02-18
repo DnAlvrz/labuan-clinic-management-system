@@ -1,17 +1,28 @@
 const MedicalRecord = require('../models/MedicalRecord');
-
+const Student = require('../models/Student');
 const medicalRec = async (req, res) => {
     try {
-        const medicalRecords = await MedicalRecord.find();
-        res.render('pages/medicalRecord', { title: 'Patient', path:'medicalRecord'});
+        const medicalRecords = await MedicalRecord.find().populate('student');
+        console.log(medicalRecords);
+        res.render('pages/medicalRecord', { title: 'Patient', medicalRecords, path:'medicalRecord'});
     } catch (error) {
         console.log(error);
-        res.render('error', error);
+        res.redirect('/medical')
     }
 }
 
 const medicalForm = async (req, res) => {
-    res.render('pages/student-findings', { title: 'Medical Form', path:''});
+    try {
+        const students = await Student.find();
+        res.render('pages/student-findings', { 
+            title: 'Medical Form', 
+            students
+        });
+    } catch (error) {
+        console.log(error)
+        res.redirect('/medical')
+    }
+    
 }
 
 const newMedicalRecord = async(req,res) => {
@@ -22,11 +33,9 @@ const newMedicalRecord = async(req,res) => {
             schoolYear,
             grade,
             temperature,
-            bloodPressure,
-            heartRate,
-            pulseRate,
+            heartPulseRespRate,
             height,
-            Weight,
+            weight,
             nutStatBM,
             nutStatHeight,
             visionScreening,
@@ -37,22 +46,22 @@ const newMedicalRecord = async(req,res) => {
             lungsHeart,
             abdomen,
             deformities,
+            deworming,
             ironSupplementation,
             SBFPBeneficiary,
+            immunization,
             fourPS,
-            menarche
+            menarche,
+            examinedBy,
+            others
         } = req.body;
         if(
             !studentId ||
-            !schooldId ||
-            !schoolYear ||
             !grade ||
             !temperature ||
-            !bloodPressure ||
-            !heartRate ||
-            !pulseRate ||
+            !heartPulseRespRate ||
             !height ||
-            !Weight ||
+            !weight ||
             !nutStatBM ||
             !nutStatHeight ||
             !visionScreening ||
@@ -62,25 +71,27 @@ const newMedicalRecord = async(req,res) => {
             !mouthThroatNeck ||
             !lungsHeart ||
             !abdomen ||
-            !deformities,
-            !ironSupplementation ||
-            !SBFPBeneficiary ||
-            !fourPS ||
-            !menarche
+            !immunization || 
+            !examinedBy
         ) {
-            res.render('error')
+            req.flash('error', "Please fill in all fields");
+            res.redirect('/medical/form');
         } else {
+            const student = await Student.findOne({_id:studentId});
+            if(!student){
+                req.flash('error', 'Student not found.');
+                res.redirect('/medical');
+                return;
+            }
+
+         
             const newMedicalRecord = await MedicalRecord.create({
-                studentId,
-                schooldId,
-                schoolYear,
+                student: studentId,
                 grade,
                 temperature,
-                bloodPressure,
-                heartRate,
-                pulseRate,
+                heartPulseRespRate,
                 height, 
-                Weight,
+                weight,
                 nutStatBM,
                 nutStatHeight,
                 visionScreening,
@@ -94,13 +105,20 @@ const newMedicalRecord = async(req,res) => {
                 ironSupplementation,
                 SBFPBeneficiary,
                 fourPS,
-                menarche
+                menarche,
+                deworming,
+                examinedBy,
+                others: others ? others : null,
             });
-            res.redirect('/medical')
+            student.medical.push(newMedicalRecord._id);
+            await student.save();
+            req.flash('message', "Medical form added.")
+            res.redirect('/medical/form')
         }
     } catch (error) {
         console.log(error)
-        res.render('error', error);
+        req.flash('error', error.message);
+        res.redirect('/medical/form');
     }
 };
 
@@ -129,5 +147,5 @@ module.exports = {
     medicalRec,
     medicalForm,
     newMedicalRecord,
-    editMedicalRecord
+    editMedicalRecord,
 }

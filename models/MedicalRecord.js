@@ -1,17 +1,9 @@
 var mongoose = require('mongoose');
 
 const medicalRecordSchema = new mongoose.Schema({
-    student: [{
+    student: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Student',
-    }],
-    schoolId: {
-        type:String,
-        required: true,
-        unique:true,
-    },
-    schoolYear: {
-        type:String,
     },
     grade: {
         type:String,
@@ -21,23 +13,15 @@ const medicalRecordSchema = new mongoose.Schema({
         type:String,
         required: true,
     },
-    bloodPressure: {
+    heartPulseRespRate: {
         type:String,
         required: true, 
-    },
-    heartRate: {
-        type:String,
-        required: true, 
-    },
-    pulseRate: {
-        type:String,
-        required: true,
     },
     height: {
         type:Number,
         required: true,
     },
-    Weight: {
+    weight: {
         type:Number,
         required: true,
     },
@@ -78,25 +62,38 @@ const medicalRecordSchema = new mongoose.Schema({
         required: true,
     },
     deformities: {
-        type:Boolean,
+        type:String,
         required: true,
+    },
+    deworming: {
+        type:Boolean,
+        default:false,
     },
     ironSupplementation: {
         type: Boolean,
-        required:true,
+        default:false,
+
     },
     SBFPBeneficiary : {
         type: Boolean,
-        required: true,
+        default:false,
     },
     fourPS: {
         type:Boolean,
-        required: true,
+        default:false,
     },
     menarche : {
         type: Boolean,
-        required: true,
+        default:false,
     },
-})
+    others: {
+        type: String,
+        default: null,
+    },
+    examinedBy: {
+        type:String,
+        required:true
+    }
+}, {timestamps:true});
 
 module.exports = mongoose.model('MedicalRecord',medicalRecordSchema)
