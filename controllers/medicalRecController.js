@@ -83,8 +83,6 @@ const newMedicalRecord = async(req,res) => {
                 res.redirect('/medical');
                 return;
             }
-
-         
             const newMedicalRecord = await MedicalRecord.create({
                 student: studentId,
                 grade,

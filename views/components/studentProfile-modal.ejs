@@ -16,43 +16,51 @@
                             <img src="/img/10027585.jpg" alt="">
                         </div>
                         <div class="modal-info">
-                            <form class="modal-form">
+                            <form class="modal-form" id="profileForm">
                                 <div class="row mb-4">
                                 <div class="col">
                                     <div class="form-outline">
-                                    <input type="text" id="form3Example1" class="form-control" value="Jose" disabled/>
-                                    <label class="form-label" for="form3Example1">First name</label>
+                                    <input type="text" id="firstNameProfile" value =" " class="form-control" disabled/>
+                                    <label 
+                                        class="form-label" 
+                                        for="firstNameProfile"
+                                    >
+                                        Firstname
+                                    </label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
                                         <input 
                                             type="text" 
-                                            id="form3Example2" 
-                                            class="form-control" 
-                                            value="Rizal" 
+                                            id="middleNameProfile" 
+                                            class="form-control"
+                                            value=" "
                                             disabled
-                                        />  
+                                        /> 
                                         <label 
                                             class="form-label" 
-                                            for="form3Example2">
-                                                Last name
+                                            for="middleNameProfile"
+                                        >
+                                            Middlename
                                         </label>
+    
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
                                         <input 
                                             type="text" 
-                                            id="form3Example2" 
-                                            class="form-control" 
-                                            value="Manalo" 
+                                            id="lastNameProfile" 
+                                            class="form-control"
+                                            value=" "
                                             disabled
                                         />
                                         <label 
                                             class="form-label" 
-                                            or="form3Example2">
-                                                Middle name
+                                            for="lastNameProfile"
+                                        >
+                                            Lastname
                                         </label>
                                     </div>
                                 </div>
@@ -63,46 +71,50 @@
                                     <div class="col">
                                         <div class="form-outline">
                                             <input 
-                                                type="number" 
-                                                id="form3Example2" 
-                                                class="form-control"
-                                                value="048295" disabled
+                                                type="text" 
+                                                id="schoolIdProfile" 
+                                                class="form-control" 
+                                                disabled
+                                                value=" "
                                             />
                                             <label 
                                                 class="form-label" 
-                                                for="form3Example2">
-                                                    LRN
+                                                for="middleNameProfile"
+                                            >
+                                                School ID
                                             </label>
+                          
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
                                             <input 
                                                 type="text" 
-                                                id="form3Example2" 
+                                                id="gradeProfile" 
                                                 class="form-control" 
-                                                value="Grade 8" 
                                                 disabled
-                                                />
+                                                value=" "
+                                            />
                                             <label 
-                                            class="form-label" 
-                                            for="form3Example2">
-                                                Year Level
-                                            </label>
+                                                class="form-label" 
+                                                for="middleNameProfile"
+                                            >
+                                            Grade Level
+                                        </label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
                                             <input 
                                                 type="text" 
-                                                id="form3Example2" 
+                                                id="sectionProfile" 
                                                 class="form-control" 
-                                                value="Manladen" 
+                                                value="  " 
                                                 disabled
                                             />
                                             <label 
                                                 class="form-label" 
-                                                for="form3Example2">
+                                                for="sectionProfile">
                                                     Section
                                             </label>
                                         </div>
@@ -115,15 +127,16 @@
                                         <div class="form-outline">
                                             <input 
                                                 type="text" 
-                                                id="form3Example2" 
+                                                id="addressProfile" 
                                                 class="form-control" 
-                                                value="Recodo,Zamboanga City" 
+                                                value="  " 
                                                 disabled
                                             />
                                             <label 
                                                 class="form-label" 
-                                                for="form3Example2">
-                                                    Address
+                                                for="addressProfile"
+                                            >
+                                                Address
                                             </label>
                                         </div>
                                     </div>
@@ -134,49 +147,27 @@
                     <hr>
                     <div class="student-details">
                         <div class="student-details-title">
-                            <h5>Details</h5>
+                            <h5>Medical Records</h5>
                         </div>
+                        <a href="#" id="printStudentRecord"> class="btn btn-primary float-right">Print student findings</a>
                         <div class="modal-table">
                             <table class="table">
                                 <thead>
                                   <tr>
                                     <th>Date</th>
                                     <th>Year Level</th>
-                                    <th>Section</th>
-                                    <th>Medical Record</th>
+                                    <th>Action</th>
                                   </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="studentMedicalRecords">
                                   <tr>
                                     <td data-label="Date">1</th>
-                                    <td data-label="Year>">Mark</td>
+                                    <td data-label="Grade>">1</td>
                                     <td data-label="Section">Otto</td>
                                     <td data-label="Medical Record">
                                         <a class="btn btn-primary btn-sm  m-1" href="/students/record">
                                             <i class="fas fa-eye"></i>
-                                                View
-                                        </a>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td data-label="Date">2</th>
-                                    <td data-label="Year">Jacob</td>
-                                    <td data-label="Section">Thornton</td>
-                                    <td data-label="Medical Record">
-                                        <a class="btn btn-primary btn-sm m-1" href="/students/record">
-                                            <i class="fas fa-eye"></i>
-                                                View
-                                        </a>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td data-label="Date">3</th>
-                                    <td data-label="Year">Larry the Bird</td>
-                                    <td data-label="Section">@twitter</td>
-                                    <td data-label="Medical Record">
-                                        <a class="btn btn-primary btn-sm m-1" href="/students/record">
-                                            <i class="fas fa-eye"></i>
-                                                View
+                                            View
                                         </a>
                                     </td>
                                   </tr>

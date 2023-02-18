@@ -97,3 +97,48 @@ const updatePatient = (patient) => {
   setForm('patientForm', '/patients?_method=PUT' );
 
 }
+
+const studentProfile = (studentId) => {
+  fetch(`/api/students/profile/${studentId}`)
+    .then(resp => {
+        return resp.json()
+    })
+    .then(student => {
+      console.log(student)
+
+      document.getElementById('firstNameProfile').value= student.firstName;
+      document.getElementById('middleNameProfile').value= student.middleName;
+      document.getElementById('lastNameProfile').value= student.lastName;
+      document.getElementById('schoolIdProfile').value= student.schoolId;
+      document.getElementById('gradeProfile').value= student.grade;
+      document.getElementById('sectionProfile').value= student.section;
+      document.getElementById('addressProfile').value= student.address;
+      const studentMedicalRecords = document.getElementById('studentMedicalRecords');
+      studentMedicalRecords.innerHTML = ""
+      student.medical.forEach(record => {
+        const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        const row = document.createElement("tr");
+        const dateCell = document.createElement("td"); 
+        const gradeCell = document.createElement("td");
+        const actionCell = document.createElement("td");
+        const actionLink = document.createElement("a");
+        actionLink.textContent="View"
+        actionLink.setAttribute('href', `/medical/form`)
+        actionLink.setAttribute('class', 'btn btn-primary')
+        actionCell.append(actionLink)
+        const examDate = new Date(record.createdAt)
+        dateCell.textContent = `${month[examDate.getMonth()]} ${examDate.getDate()}, ${examDate.getFullYear()}`
+        gradeCell.textContent = record.grade
+        console.log(examDate)
+        row.appendChild(dateCell);
+        row.appendChild(gradeCell);
+        row.appendChild(actionCell)
+        studentMedicalRecords.appendChild(row);
+      });
+
+    })
+    .catch(err=> {
+      console.log(err)
+    })
+
+}
