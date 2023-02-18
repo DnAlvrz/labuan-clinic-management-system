@@ -1,59 +1,33 @@
 <%- include('../includes/header'); %>
 <div class="container-flud main-container">
   <%- include('../includes/menubar'); %>
-  <div class="visitor">
-    <a href="/visitors/form" class="btn btn-primary"">
-      New visitor
-    </a>
-    <div class="search-button">
-      <div class="input-group">
-        <div class="form-outline">
-          <input type="search" id="navsearch" onkeyup="myFunction()" class="form-control" />
-          <label class="form-label" for="navsearch">Search</label>
+    <div class="visitor">
+        <a href="/visitors/form" class="btn btn-primary"">
+        New visitor
+        </a>
+        <div class="search-button">
+        <div class="input-group">
+            <div class="form-outline">
+                <input type="search" id="navsearch" onkeyup="myFunction()" class="form-control" />
+                <label class="form-label" for="navsearch">Search</label>
+            </div>
         </div>
-      </div>
+        </div>
+        <div class="visitor-list">
+        <%- include('../components/tables/visitor-table') %>
+        </div>
+        <div class="visitor-page">
+            <nav class="pt-2" aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <div class="visitor-list">
-      <table class="table" id="table" >
-        <thead>
-          <tr class="theadRow">
-            <th scope="col" class="th" data-column="id" data-order="desc">
-              Full Name</th>
-            <th scope="col" class="th" data-column="name" data-order="desc">
-              Date</th>
-            <th scope="col" class="th" data-column="grade" data-order="desc">
-              Contact No.</th>
-            <th scope="col" class="th" data-column="section" data-order="desc">
-                Temp</th>
-                <th scope="col" class="th" data-column="action" data-order="desc">
-                  Action</th>
-        </thead>
-        <tbody id="myTable">
-            <td data-label="ID No.">
-              <a href="/students/record">cics-123</a>
-            </td>
-            <td data-label="Name">asdasd</td>
-            <td data-label="Grade">8</td>
-            <td data-label="Date">June 28, 1999</td>
-            <td>
-                <button class="btn btn-primary btn-sm  m-1"> <i class="fas fa-eye"></i> View</button>
-            </td>
-        </tbody>
-        </tbody>
-      </table>
-    </div>
-    <div class="visitor-page">
-      <nav class="pt-2" aria-label="Page navigation">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
 </div>
 
 

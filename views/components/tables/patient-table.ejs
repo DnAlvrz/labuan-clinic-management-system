@@ -1,0 +1,46 @@
+<table class="table" id="table" >
+    <thead>
+      <tr class="theadRow">
+        <th scope="col" class="th" data-column="id" data-order="desc">
+          ID No.
+        </th>
+        <th scope="col" class="th" data-column="name" data-order="desc">
+          Name
+        </th>
+        <th scope="col" class="th" data-column="grade" data-order="desc">
+          Grade
+        </th>
+        <th scope="col" class="th" data-column="section" data-order="desc">
+            Section
+        </th>
+        <th scope="col" class="th" data-column="action" data-order="desc">
+          Action
+        </th>
+    </thead>
+    <tbody id="myTable">
+      <% if(patients) { %>
+      <% patients.forEach(patient => { %>
+        <tr>
+          <td><%= patient.schoolId %></td>
+          <td>
+            <%= patient.firstName %>
+            <%= patient.middleName[0] %>
+            <%= patient.lastName %>
+          </td>
+          <td><%= patient.grade%></td>
+          <td><%= patient.section%></td>
+          <td>
+            <button  
+              data-mdb-toggle="modal" 
+              data-mdb-target="#createPatientModal"
+              class="btn btn-primary"
+              onclick="updatePatient(<%=JSON.stringify(patient)%>)"
+            >
+              Edit
+            </button>
+          </td>
+        </tr>
+      <% }) %>
+      <% } %>
+    </tbody>
+  </table>
