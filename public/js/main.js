@@ -139,6 +139,5 @@ const studentProfile = (studentId) => {
     })
     .catch(err=> {
       console.log(err)
-    })
-
+    });
 }
