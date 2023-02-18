@@ -1,11 +1,11 @@
 <%- include('../includes/header') %>
 <%- include('../includes/formNavbar') %>
 <div class="container student-form-container">
-    <div class="form-tittle mt-3">
+  <div class="form-tittle mt-3">
         <h1>Student Findings Form</h1>
         <p>Please fill out the form below.</p>
-    </div>
-    <div class="form-container">
+  </div>
+  <div class="form-container">
         <form action="/medical" class="student-form" method="POST">
             <div class="row">
                 <div class="col form col">
@@ -13,11 +13,11 @@
                     <select const  class="select form-select-btn" name="studentId" required >
                         <% if (students) { %>
                             <% students.forEach(student => { %>
-                                <option value="<%=student._id%>">
-                                    <%=student.firstName%>
-                                    <%=student.middleName%>
-                                    <%=student.lastName%>
-                                </option>
+                            <option value="<%=student._id%>">
+                                <%=student.firstName%>
+                                <%=student.middleName%>
+                                <%=student.lastName%>
+                            </option>
                             <% }) %>
                         <%}%>
                     </select>
@@ -34,8 +34,6 @@
                     </select>
                 </div>
             </div>
-            
-            <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row my-3 form-row">
                 <div class="DoB-label">
                     <label for="">Details</label>
@@ -70,7 +68,7 @@
             <div class="row mb-4 form-row">
                 <div class="col form-col">
                     <select name="nutStatBM" class="select form-select-btn" required >
-                        <option value="Normal Weigh" disabled selected>Nutritional Status(NS)(BM/Wt-for-Age)</option>
+                        <option value="Normal Weigh" disabled selected hidden>Nutritional Status(NS)(BM/Wt-for-Age)</option>
                         <option value="Normal Weight">Normal Weight</option>
                         <option value="Wasted/Underweight">Wasted/Underweight</option>
                         <option value="Severely Wasted/Underwieght">Severely Wasted/Underwieght</option>
@@ -80,7 +78,7 @@
                 </div>
                 <div class="col form-coll">
                     <select name="nutStatHeight" class="select form-select-btn" required >
-                        <option value="Normal Height" disabled selected>Nutritional Status(NS)(Height-for-Age)</option>
+                        <option value="Normal Height" disabled selected hidden>Nutritional Status(NS)(Height-for-Age)</option>
                         <option value="Normal Height">Normal Height</option>
                         <option value="Stunted">Stunted</option>
                         <option value="Severely Stunted">Severely Stunted</option>
@@ -89,7 +87,7 @@
                 </div>
                 <div class="col form-col">
                     <select name="visionScreening" class="select form-select-btn" required >
-                        <option value="Passed" disabled selected>Vision Screening using appropriate chart</option>
+                        <option value="Passed" disabled selected hidden>Vision Screening using appropriate chart</option>
                         <option value="Passed">Passed</option>
                         <option value="Failed">Failed</option>
                     </select>
@@ -98,14 +96,14 @@
             <div class="row mb-4 form-row">
                 <div class="col form-col">
                     <select name="auditoryScreening" class="select form-select-btn" required >
-                        <option value="Passed" disabled selected>Auditory Screening(Tuning Fork)</option>
+                        <option value="Passed" disabled selected hidden>Auditory Screening(Tuning Fork)</option>
                         <option value="Passed">Passed</option>
                         <option value="Failed">Failed</option>
                     </select>
                 </div>
                 <div class="col form-col">
                     <select name="skinScalp"class="select form-select-btn" required >
-                        <option value="Normal" disabled selected>Skin/Scalp</option>
+                        <option value="Normal" disabled selected hidden>Skin/Scalp</option>
                         <option value="Normal">Normal</option>
                         <option value="Presence of Lice">Presence of Lice</option>
                         <option value="Redness of Skin">Redness of Skin</option>
@@ -121,7 +119,7 @@
                 </div>
                 <div class="col form-col">
                     <select name="eyesEarsNose" class="select form-select-btn" required >
-                        <option value="Normal" disabled selected>Eyes/Ears/Nose</option>
+                        <option value="Normal" disabled selected hidden>Eyes/Ears/Nose</option>
                         <option value="Normal">Normal</option>
                         <option value="Stye">Stye</option>
                         <option value="Eye Redness">Eye Redness</option>
@@ -138,7 +136,7 @@
                 </div>
                 <div class="col form-col">
                     <select name="mouthThroatNeck" class="select form-select-btn" required >
-                        <option value="Normal" disabled selected>Mouth/Throat/Neck</option>
+                        <option value="Normal" disabled selected hidden>Mouth/Throat/Neck</option>
                         <option value="Normal">Normal</option>
                         <option value="Enlarged tonsils">Enlarged tonsils</option>
                         <option value="Presence of lesions">Presence of lesions</option>
@@ -151,7 +149,7 @@
             <div class="row mb-4 form-row">
                 <div class="col form-col">
                     <select name="lungsHeart" class="select form-select-btn" required >
-                        <option value="Normal" disabled selected>Lungs//Heart</option>
+                        <option value="Normal" disabled selected hidden>Lungs//Heart</option>
                         <option value="Normal">Normal</option>
                         <option value="Rales">Rales</option>
                         <option value="Wheeze">Wheeze</option>
@@ -162,7 +160,7 @@
                 </div>
                 <div class="col form-col">
                     <select name="abdomen" class="select form-select-btn" required >
-                        <option value="" disabled selected>Abdomen</option>
+                        <option value="" disabled selected hidden>Abdomen</option>
                         <option value="Normal">Normal</option>
                         <option value="Distended">Distended</option>
                         <option value="Abdominal Pain">Abdominal Pain</option>
@@ -173,7 +171,7 @@
                 </div>
                 <div class="col form-col">
                     <select name="deformities" class="select form-select-btn" required >
-                        <option value="" disabled selected>Deformities</option>
+                        <option value="" disabled selected hidden>Deformities</option>
                         <option value="None">None</option>
                         <option value="Aquired">Aquired</option>
                         <option value="Congenital (Specify)">Congenital (Specify)</option>
@@ -221,11 +219,9 @@
             <div class="row mb-4 form-row">
                 <div class="col">
                     <div class="form-outline">
-                        <textarea
-                        name="others"
-                        class="form-control" id="others" rows="4"></textarea>
+                        <textareaname="others" class="form-control" id="others" rows="4"></textareaname=>
                         <label class="form-label" for="others">Others, specify</label>
-                      </div>
+                    </div>
                 </div>
             </div>
             <div class="row mb-4 form-row">
@@ -238,9 +234,7 @@
                 <div class="col leave blank to make space"></div>
             </div>
             <button type="submit" class="btn btn-primary findings-student-btn w-100">Submit</button>
-          </form>
+        </form>
     </div>
 </div>
-
-
 <%- include('../includes/footer') %>

@@ -1,37 +1,29 @@
 <%- include('../../includes/header') %>
 <div class="container-fluid login-container">
   <div class="login-logo">
-    <div class="login-img">
-      <img src="/img/undraw_medicine_b1ol.png" alt="">
-    </div>
+        <div class="login-img">
+            <img src="/img/undraw_medicine_b1ol.png" alt="">
+        </div>
   </div>
-  <div class="login-card">
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">Sign In</h1>
-        <p class="card-text">Please sign in to continue.</p>
-        <form>
-          <div class="form-outline mb-4">
-            <input type="email" id="form1Example1" class="form-control" />
-            <label class="form-label" for="form1Example1">Email address</label>
-          </div>
-        
-          <div class="form-outline mb-4">
-            <input type="password" id="form1Example2" class="form-control" />
-            <label class="form-label" for="form1Example2">Password</label>
-          </div>
-        
-        
-          <button type="button" class="btn btn-primary w-100">Sign In</button>
-        </form>
-      </div>
+    <div class="login-card">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Sign In</h1>
+                <p class="card-text">Please sign in to continue.</p>
+                <form>
+                    <div class="form-outline mb-4">
+                        <input type="email" name="emailAddress" id="form1Example1" class="form-control" />
+                        <label class="form-label" for="form1Example1">Email address</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" name="password" id="form1Example2" class="form-control" />
+                        <label class="form-label" for="form1Example2">Password</label>
+                    </div>
+                    <button type="button" class="btn btn-primary w-100">Sign In</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-
 </div>
-
-
-
-
 <%- include('../../includes/footer') %>
 

@@ -1,67 +1,33 @@
 <%- include('../includes/header'); %>
 <div class="container-flud main-container">
   <%- include('../includes/menubar'); %>
-  <div class="medicalRecord">
-    <a href="/medical/form" class="btn btn-primary"">
-      New medical
-    </a>
-    <div class="search-button">
-      <div class="input-group">
-        <div class="form-outline">
-          <input type="search" id="navsearch" onkeyup="myFunction()" class="form-control" />
-          <label class="form-label" for="navsearch">Search</label>
+    <div class="medicalRecord">
+        <a href="/medical/form" class="btn btn-primary"">
+        New medical
+        </a>
+        <div class="search-button">
+        <div class="input-group">
+                <div class="form-outline">
+                    <input type="search" id="navsearch" onkeyup="myFunction()" class="form-control" />
+                    <label class="form-label" for="navsearch">Search</label>
+                </div>
         </div>
-      </div>
+        </div>
+        <div class="medicalRecord-list">
+        <%- include('../components/tables/medicalRecord-table') %>
+        </div>
+        <div class="medicalRecord-page">
+        <nav class="pt-2" aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+        </nav>
+        </div>
     </div>
-    <div class="medicalRecord-list">
-      <table class="table" id="table" >
-        <thead>
-          <tr class="theadRow">
-            <th scope="col" class="th" data-column="id" data-order="desc">
-              ID No.</th>
-            <th scope="col" class="th" data-column="name" data-order="desc">
-              Name</th>
-            <th scope="col" class="th" data-column="grade" data-order="desc">
-              Grade</th>
-            <th scope="col" class="th" data-column="section" data-order="desc">
-                Date</th>
-                <th scope="col" class="th" data-column="action" data-order="desc">
-                  Action</th>
-        </thead>
-        <tbody id="myTable">
-          <% if (medicalRecords) { %>
-            <% medicalRecords.forEach(record => { %>
-              <td data-label="ID No.">
-                <a href="/students/record"><%=record.student.schoolId%></a>
-              </td>
-              <td data-label="Name">asdasd</td>
-              <td data-label="Grade">8</td>
-              <td data-label="Date">June 28, 1999</td>
-              <td>
-                  <button class="btn btn-primary btn-sm  m-1"> <i class="fas fa-eye"></i> View</button>
-                  <button class="btn btn-primary btn-sm m-1"> 
-                    <i class="fas fa-edit"></i > Edit
-                  <button>
-              </td>
-            <% }) %>
-          <% } %>
-            
-        </tbody>
-        </tbody>
-      </table>
-    </div>
-    <div class="medicalRecord-page">
-      <nav class="pt-2" aria-label="Page navigation">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
 </div>
 
 
