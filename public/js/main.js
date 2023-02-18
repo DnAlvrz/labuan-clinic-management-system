@@ -99,6 +99,7 @@ const updatePatient = (patient) => {
 }
 
 const studentProfile = (studentId) => {
+  document.getElementById('printStudentRecord').setAttribute('href', `/print/students/medical/${studentId}`)
   fetch(`/api/students/profile/${studentId}`)
     .then(resp => {
         return resp.json()
@@ -122,7 +123,7 @@ const studentProfile = (studentId) => {
         const gradeCell = document.createElement("td");
         const actionCell = document.createElement("td");
         const actionLink = document.createElement("a");
-        actionLink.textContent="View"
+        actionLink.textContent='View'
         actionLink.setAttribute('href', `/medical/form`)
         actionLink.setAttribute('class', 'btn btn-primary')
         actionCell.append(actionLink)
@@ -139,5 +140,6 @@ const studentProfile = (studentId) => {
     })
     .catch(err=> {
       console.log(err)
-    });
+    })
+
 }
