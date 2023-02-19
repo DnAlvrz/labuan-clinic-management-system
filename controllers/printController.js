@@ -3,8 +3,6 @@ const pdf = require("pdf-creator-node");
 const fs = require("fs");
 const path = require('path');
 const ejs = require('ejs');
-const { constants } = require('os');
-const { studentFindings } = require('./studentController');
 const { errorMonitor } = require('events');
 
 const printStudentMedicalRecord = async(req, res) => {
@@ -23,25 +21,30 @@ const printStudentMedicalRecord = async(req, res) => {
             res.redirect('/students');
             return;
         }
+<<<<<<< Updated upstream
         console.log(student.medical[0])
         // Read HTML Template
         const template = fs.readFileSync(path.join(process.cwd(), "/templates/schoolHealthForm.html"), 'utf8');
+=======
+
+        const template = fs.readFileSync(path.join(process.cwd(), "/templates/schoolHealthForm.ejs"), 'utf8');
+>>>>>>> Stashed changes
         const content =  ejs.render(template, {student})
         fs.writeFile(path.join(process.cwd(), `/templates/${studentId}.html`), content, () => {
             const filePath = path.join(process.cwd(), `/templates/${studentId}.html`)
             const html = fs.readFileSync(filePath, "utf8");
-    
-            // Paper Size and Format
+
             const options = {
                 format: "Legal",
                 orientation: "portrait",
                 border: "10mm",
-                
             };
+
             const cssRules = fs.readFileSync(
                 path.join(process.cwd(), "/templates/studentPrintable.css"),
                 "utf8"
             );
+
             const document = {
                 html: html,
                 data: {
@@ -49,12 +52,11 @@ const printStudentMedicalRecord = async(req, res) => {
                     style: cssRules,
                 },
                 path: `./documents/students/${student.schoolId}.pdf`,
-                type: "",
             }
+            
             pdf
                 .create(document, options)
                 .then((resp) => {
-                    console.log(resp);
                     res.redirect(`/students`);
                 })
                 .catch((error) => {
@@ -67,11 +69,9 @@ const printStudentMedicalRecord = async(req, res) => {
                 if (err) {
                     console.log(errorMonitor)
                 }
-
-                console.log("Delete File successfully.");
             });
-        })
-      
+        });
+        
     } catch (error) {
         console.log(error);
         req.flash('error', "Something went wrong");

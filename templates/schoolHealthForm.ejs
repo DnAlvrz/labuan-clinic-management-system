@@ -3,13 +3,266 @@
     <head>
         <meta charset="UTF-8" />
         <title>Form</title>
+<<<<<<< Updated upstream
     </head>
-    
+    <style>
+        .form-header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            color: #000;
+        }
+        .form-card-title{
+            margin-top: 1.5rem;
+            color: #000;
+            outline: solid 2px #000;
+            text-align: center;
+        }
+        .form-title{
+            font-size: 0.8em;
+            text-align: center;
+        }
+        .form-logo > img{
+            display: block;
+            max-width: 6rem;
+            padding: 1rem;
+        }
+        .header-content{
+            display: flex;
+            gap: 5rem;
+        }
+        .header-content > section{
+            width: 50%;
+        }
+
+        .school-health-form{
+            width: 100%;
+        }
+        .school-form{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            gap: 6rem;
+        }
+        /* -----------------NAME -------------------*/
+        .nameList{
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .nameField{
+            display: flex;
+            flex-direction: row;
+        }
+        .nameTitle{
+            padding-right: 1rem;
+        }
+        .name-field{
+            width: 9rem;
+            border: none;
+            border-bottom: 2px solid #000;
+        }
+        .nameDiv{
+            display:flex;
+            flex-direction:column;
+            align-items: center;
+        }
+        /* ---------------------NAME-------------------- */
+        /* ---------------------LRN-------------------- */
+        .lrnList{
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .lrnField{
+            display: flex;
+            flex-direction: row;
+        }
+        .lrnTitle{
+            padding-right: 1rem;
+        }
+        .lrn-field{
+            border: none;
+            border-bottom: 2px solid #000;
+        }
+        /* ---------------------LRN-------------------- */
+        /* ---------------------DOB-------------------- */
+        .dobList{
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .dobField{
+            display: flex;
+            flex-direction: row;
+        }
+        .dobTitle{
+            min-width: 7rem;
+            padding-right: 1rem;
+        }
+        .dob-field{
+            width: 8rem;
+            border: none;
+            border-bottom: 2px solid #000;  }
+        .dobDiv{
+            display:flex;
+            flex-direction:column;
+            align-items: center;
+        }
+        /* ---------------------DOB-------------------- */
+        /* ---------------------Birtthplace-------------------- */
+        .bpList{
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .bpField{
+            display: flex;
+            flex-direction: row;
+        }
+        .bpTitle{
+            padding-right: 1rem;
+        }
+        .bp-field{
+            width: 25.5rem;
+            border: none;
+            border-bottom: 2px solid #000;  
+        }
+        /* ---------------------Birthplace-------------------- */
+        /* ---------------------PARENT-------------------- */
+        .parentList{
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .parentField{
+            display: flex;
+            flex-direction: row;
+        }
+        .parentTitle{
+            padding-right: 1rem;
+        }
+        .parent-field{
+            width: 23rem;
+            border: none;
+            border-bottom: 2px solid #000;
+        }
+        /* ---------------------PARENT-------------------- */
+        /* ---------------------address-------------------- */
+        .addressList{
+                margin-top: 1rem;
+            width: 100%;
+        }
+        .addressField{
+            display: flex;
+            flex-direction: row;
+        }
+        .addressTitle{
+            padding-right: 1rem;
+        }
+        .address-field{
+            width: 73rem;
+            border: none;
+            border-bottom: 2px solid #000;
+        }
+        /* ---------------------address-------------------- */
+            /* ---------------------LRN-------------------- */
+            .idList{ 
+            margin-top: 1rem;
+            width: 100%;
+            }
+            .idField{
+            display: flex;
+            flex-direction: row;
+            }
+            .idTitle{
+            text-align: center;
+            width: 7rem;
+            padding-right: 1rem;
+            }
+            .id-field{
+            width: 15rem;
+            border: none;
+            border-bottom: 2px solid #000;
+            }
+            /* ---------------------LRN-------------------- */
+            /* ---------------------LRN-------------------- */
+            .regionList{ 
+            margin-top: 5.3rem;
+            width: 100%;
+            }
+            .regionField{
+            display: flex;
+            flex-direction: row;
+            }
+            .regionTitle{
+            padding-right: 1rem;
+            }
+            .region-field{
+            text-align: center;
+            width: 17rem;
+            border: none;
+            border-bottom: 2px solid #000;
+            }
+            /* ---------------------LRN-------------------- */
+            /* ---------------------LRN-------------------- */
+            .divisionList{ 
+            margin-top: 3rem; 
+            width: 100%;
+            }
+            .divisionField{
+            display: flex;
+            flex-direction: row;
+            }
+            .divisionTitle{
+            padding-right: 1rem;
+            }
+            .division-field{
+            text-align: center;
+            width: 17rem;
+            border: none;
+            border-bottom: 2px solid #000;
+            }
+            /* ---------------------LRN-------------------- */
+            /* ---------------------LRN-------------------- */
+            .phoneList{ 
+            margin-top: 1rem;
+            width: 100%;
+            }
+            .phoneField{
+            display: flex;
+            flex-direction: row;
+            }
+            .phoneTitle{
+            width: 10rem;
+            padding-right: 1rem;
+            }
+            .phone-field{
+            width: 15rem;
+            border: none;
+            border-bottom: 2px solid #000;
+            }
+            /* ---------------------LRN-------------------- */
+        .left{
+            width: 50%;
+        }
+        .right{
+            width: 50%;
+        }
+        table,
+        tr,
+        td{
+            outline: 1px solid #000;
+            color: #000;
+            padding: none;
+            margin: none;
+            font-size: 0.9em;
+        }
+        .form-table{
+            width: 100%;
+        }
+    </style>
 <body>
     <header>
         <div class="container-fluid form-header">
             <section class="form-logo">
-                <img src="My project (1).png" fetchpriority="high" loading="lazy">
+                <img src="My project.jpeg" fetchpriority="high" loading="lazy">
             </section>
             <article class="form-title">
                 <strong>REPUBLIC OF THE PHILIPPINES <br> DEPARTMENT OF EDUCATION <br> DIVISION OF ZAMBOANGA CITY</strong>
@@ -17,7 +270,7 @@
                 <small>Zamboanga City</small>
             </article>
             <section class="form-logo">
-                <img src="sidebar-logo.png" fetchpriority="high" loading="lazy">
+                <img style="display: block; max-width: 6rem; padding: 1rem;" src="https://scontent.fmnl9-1.fna.fbcdn.net/v/t39.30808-6/166970590_172841551565201_5170973977685216828_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=mtdfVbFyHOIAX9Mi0sV&_nc_ht=scontent.fmnl9-1.fna&oh=00_AfDl4JHLOf5WiKo1k3mL0fUW4TkiDn6hjUiQmajjNE3QUA&oe=63F63945">
             </section>
         </div>
         <div class="container-fluid">
@@ -462,18 +715,5 @@
           </table>
           <div>Note: Letter to record ailment and Place X if not examined</div>
         </div>
-
-
-
-
-
-
-
-
-
-       <!-- MDB -->
-       <script type="text/javascript" src="/js/mdb.min.js"></script>
-       <!-- Custom scripts -->
-       <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
