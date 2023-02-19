@@ -1,0 +1,160 @@
+<div class="container-fluid">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#visitorModal">
+      Create Visitor
+    </button>
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="visitorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Visitor</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="student-form">
+                <div class="row mb-4 form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="firstname" class="form-control" required />
+                        <label class="form-label" for="firstname">Full name</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-outline">
+                            <input type="date" id="lastname" class="form-control"  required />
+                            <label class="form-label" for="lastname">Date</label>
+                            </div>
+                    </div>
+                </div>
+                <div class="row mb-4 form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <input name="lrn" type="text" id="lrn" class="form-control" required />
+                            <label class="form-label" for="lrn">Contact No.</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="schoolId" class="form-control"  required />
+                            <label class="form-label" for="schoolId">Temp</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><p>1. Are you Experiencing or did you have any of the following in the past 14 days?</p></strong>
+                            <strong><label class="form-label" for="schoolId">A. FEVER</label></strong>
+                            <label class="form-label space" for="schoolId">YES</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-label" for="schoolId">NO</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">B. COUGH AND COLD</label></strong>
+                            <label class="form-label space" for="schoolId">YES</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-label" for="schoolId">NO</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"   />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">C. BODY PAINS</label></strong>
+                            <label class="form-label space" for="schoolId">YES</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-label" for="schoolId">NO</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">D. SORE THROAT</label></strong>
+                            <label class="form-label space" for="schoolId">YES</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-label" for="schoolId">NO</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">E. HEADACHE</label></strong>
+                            <label class="form-label space" for="schoolId">YES</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-label" for="schoolId">NO</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">F. DIARHEA</label></strong>
+                            <label class="form-label space" for="schoolId">YES</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-label" for="schoolId">NO</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">G. LOSS OF TASTE OR SMELL</label></strong>
+                            <label class="form-label space" for="schoolId">YES</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-label" for="schoolId">NO</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">H. DIFFICULTY BREATHING</label></strong>
+                            <label class="form-label space" for="schoolId">YES</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-label" for="schoolId">NO</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><p>2. Have you been exposed with a probable or comfirmed COVID-19 case within 1meter and for more than 15minutes for the past 14 days?</p></strong>
+                            <label class="form-label space" for="schoolId">YES</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-label" for="schoolId">NO</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4 form-row">
+                    <div class="col">
+                        <strong><p>3. Have you traveled outside the current city/municipality where you reside? if yes, please specify.</p></strong>
+                        <div class="form-outline">
+                            <input type="text" id="lastname" class="form-control"   />
+                            <label class="form-label" for="lastname">If yes specify here</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary findings-student-btn w-100">Submit</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>

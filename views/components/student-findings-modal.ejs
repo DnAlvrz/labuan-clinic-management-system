@@ -1,0 +1,262 @@
+<div class="container-fluid">
+
+    <button 
+      type="button" 
+      onclick="clearForm('patientForm', '/patients')" 
+      class="btn btn-primary" 
+      data-mdb-toggle="modal" 
+      data-mdb-target="#createFindingsModal">
+      Create Medical Record
+    </button>
+
+  <div 
+    class="modal modal-lg fade" 
+    id="createFindingsModal" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Patient Form</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-container">
+                <form action="/medical" class="student-form" method="POST">
+                    <div class="row">
+                        <div class="col form col">
+                            <label for="">Student</label>
+                            <select const  class="select form-select-btn" name="studentId" required >
+
+                            </select>
+                        </div>
+                        <div class="col form col">
+                            <label for="">Year Level</label>
+                            <select class="select form-select-btn" name="grade" required >
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                                <option value="11">Grade 11</option>
+                                <option value="12">Grade 12</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row my-3 form-row">
+                        <div class="DoB-label">
+                            <label for="">Details</label>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input name="temperature" type="text" id="region" class="form-control" required/>
+                                <label class="form-label" for="region">Temperature/BP</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input name="heartPulseRespRate" type="text" id="region" class="form-control" required/>
+                                <label class="form-label" for="region">Heart Rate/Pulse Rate/Respiratory Rate</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input name="height" type="number" id="contactNo" class="form-control" required  />
+                                <label class="form-label" for="contactNo">Height (in cm)</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input name="weight" type="number" id="contactNo" class="form-control" required  />
+                                <label class="form-label" for="contactNo">Weight (in kg)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <select name="nutStatBM" class="select form-select-btn" required >
+                                <option value="Normal Weigh" disabled selected hidden>Nutritional Status(NS)(BM/Wt-for-Age)</option>
+                                <option value="Normal Weight">Normal Weight</option>
+                                <option value="Wasted/Underweight">Wasted/Underweight</option>
+                                <option value="Severely Wasted/Underwieght">Severely Wasted/Underwieght</option>
+                                <option value="Overweight">Overweight</option>
+                                <option value="Obese">Obese</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="nutStatHeight" class="select form-select-btn" required >
+                                <option value="Normal Height" disabled selected hidden>Nutritional Status(NS)(Height-for-Age)</option>
+                                <option value="Normal Height">Normal Height</option>
+                                <option value="Stunted">Stunted</option>
+                                <option value="Severely Stunted">Severely Stunted</option>
+                                <option value="Tall">Tall</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <select name="visionScreening" class="select form-select-btn" required >
+                                <option value="Passed" disabled selected hidden>Vision Screening using appropriate chart<option>
+                                <option value="Passed">Passed</option>
+                                <option value="Failed">Failed</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="auditoryScreening" class="select form-select-btn" required >
+                                <option value="Passed" disabled selected hidden>Auditory Screening(Tuning Fork)</option>
+                                <option value="Passed">Passed</option>
+                                <option value="Failed">Failed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <select name="skinScalp"class="select form-select-btn" required >
+                                <option value="Normal" disabled selected hidden>Skin/Scalp</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Presence of Lice">Presence of Lice</option>
+                                <option value="Redness of Skin">Redness of Skin</option>
+                                <option value="White Spots">White Spots</option>
+                                <option value="Flaky Skin">Flaky Skin</option>
+                                <option value="Impetigo/boil">Impetigo/boil</option>
+                                <option value="Hematoma">Hematoma</option>
+                                <option value="Bruises/Injuries">Bruises/Injuries</option>
+                                <option value="Itchiness">Itchiness</option>
+                                <option value="Skin Lessions">Skin Lessions</option>
+                                <option value="Acne/Pimple">Acne/Pimple</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="eyesEarsNose" class="select form-select-btn" required >
+                                <option value="Normal" disabled selected hidden>Eyes/Ears/Nose</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Stye">Stye</option>
+                                <option value="Eye Redness">Eye Redness</option>
+                                <option value="Ocular Misalignment">Ocular Misalignment</option>
+                                <option value="Pale Conjunctiva">Pale Conjunctiva</option>
+                                <option value="Ear discharge">Ear discharge</option>
+                                <option value="Impacted Cerumen">Impacted Cerumen</option>
+                                <option value="Mucus Discharge">Mucus Discharge</option>
+                                <option value="Nose Bleeding (Epistaxis)">Nose Bleeding (Epistaxis)</option>
+                                <option value="Eye Discharge">Eye Discharge</option>
+                                <option value="Matted Eyelashes">Matted Eyelashes</option>
+                                <option value="Other, Specify">Other, Specify</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <select name="mouthThroatNeck" class="select form-select-btn" required >
+                                <option value="Normal" disabled selected hidden>Mouth/Throat/Neck</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Enlarged tonsils">Enlarged tonsils</option>
+                                <option value="Presence of lesions">Presence of lesions</option>
+                                <option value="inflamed pharynx<">inflamed pharynx</option>
+                                <option value="Enlarged lymphnodes<">Enlarged lymphnodes</option>
+                                <option value="Other, Specify">Other, Specify</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="lungsHeart" class="select form-select-btn" required >
+                                <option value="Normal" disabled selected hidden>Lungs//Heart</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Rales">Rales</option>
+                                <option value="Wheeze">Wheeze</option>
+                                <option value="Murmur">Murmur</option>
+                                <option value="Irregular heart rate">Irregular heart rate</option>
+                                <option value="Other, Specify">Other, Specify</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <select name="abdomen" class="select form-select-btn" required >
+                                <option value="" disabled selected hidden>Abdomen</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Distended">Distended</option>
+                                <option value="Abdominal Pain">Abdominal Pain</option>
+                                <option value="Tenderness">Tenderness</option>
+                                <option value="Dysmenorrhea">Dysmenorrhea</option>
+                                <option value="Other, Specify">Other, Specify</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="deformities" class="select form-select-btn" required >
+                                <option value="" disabled selected hidden>Deformities</option>
+                                <option value="None">None</option>
+                                <option value="Aquired">Aquired</option>
+                                <option value="Congenital (Specify)">Congenital (Specify)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input id="ironSupp" name="ironSupplementation"class="form-check-input" type="checkbox" value="true"  />
+                                <label class="form-check-label" for="ironSupp" >Iron Supplementation</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input name="deworming" class="form-check-input" type="checkbox" value="true" id="deworming" />
+                                <label class="form-check-label" for="deworming">Deworming</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input name="immunization" type="text" id="immunization" class="form-control" required  />
+                                <label class="form-label" for="immunization">Immunization(Specify what kind)</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input name="SBFPBeneficiary" class="form-check-input" type="checkbox" value="true" id="beneficiary" />
+                                <label class="form-check-label" for="beneficiary">SBFP Beneficiary</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input name="fourPS" class="form-check-input" type="checkbox" value="true" id="4ps" />
+                                <label class="form-check-label" for="4ps">4ps Beneficiary</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input name="menarche" class="form-check-input" type="checkbox" value="true" id="menarche" />
+                                <label class="form-check-label" for="menarche">Menarche</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <div class="form-outline">
+                                <textarea name="others" class="form-control" id="others" rows="4" ></textarea>
+                                <label class="form-label" for="others">Others, specify</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 form-row">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input name="examinedBy" type="text" id="examinedBy" class="form-control" required  />
+                                <label class="form-label" for="examinedBy"><strong>Examined by:</strong></label>
+                            </div>
+                        </div>
+                        <div class="col leave blank to make space"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary findings-student-btn w-100">Submit</button>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
