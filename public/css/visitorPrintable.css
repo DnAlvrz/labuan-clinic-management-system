@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.visitor-logo{
+    height: 20rem;
+    width: 50rem;
+    background-size: cover;
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background: url('/public/img/visitor.jpg');
+}
