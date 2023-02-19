@@ -224,6 +224,54 @@
 .space{
   margin-left: 1rem;
 }
+.landing-page-nav{
+  padding: 1rem;
+}
+.landing-page-nav > img{
+  display: block;
+  max-width: 6rem;
+  padding: 1rem;
+}
+.content-logo > img{
+  display: block;
+  max-width: 32rem;
+  padding: 1rem;
+}
+.landing-page-main{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-div{
+  margin: 0;
+  padding: 0;
+  color: #D3D3D3;
+}
+.main-slogan{
+  padding: 5rem;
+}
+.main-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #002B5B;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+.footer-card-1{
+  padding: 1rem;
+}
+.footer-card-2{
+  padding: 1rem;
+  max-width: 60%;
+}
+.main-names{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
 /* ----- MEDIA RESPONSIVENESS ------ */
 @media only screen and (min-width: 991.98px) {
   .main-container{
