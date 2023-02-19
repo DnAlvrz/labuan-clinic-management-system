@@ -107,6 +107,7 @@ const newMedicalRecord = async(req,res) => {
                 deworming,
                 examinedBy,
                 others: others ? others : null,
+                immunization
             });
             student.medical.push(newMedicalRecord._id);
             await student.save();

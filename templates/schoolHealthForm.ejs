@@ -23,266 +23,13 @@
         <link rel="stylesheet" href="studentPrintable.css"/>
       </head>
       <style>
-        body{
-  max-height: 100vh;
-}
-.form-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    color: #000;
-  }
-  .form-card-title{
-    margin-top: 1.5rem;
-    color: #000;
-    outline: solid 2px #000;
-    text-align: center;
-  }
-  .form-title{
-    font-size: 0.8em;
-    text-align: center;
-  }
-  .form-logo > img{
-    display: block;
-    max-width: 6rem;
-    padding: 1rem;
-  }
-  .header-content{
-    display: flex;
-    gap: 5rem;
-  }
-  .header-content > section{
-    width: 50%;
-  }
-
-  .school-health-form{
-    width: 100%;
-  }
-  .school-form{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    gap: 6rem;
-  }
-  /* -----------------NAME -------------------*/
-  .nameList{
-    margin-top: 1rem;
-    width: 100%;
-  }
-  .nameField{
-    display: flex;
-    flex-direction: row;
-  }
-  .nameTitle{
-    padding-right: 1rem;
-  }
-  .name-field{
-    width: 9rem;
-    border: none;
-    border-bottom: 2px solid #000;
-  }
-  .nameDiv{
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-  }
-  /* ---------------------NAME-------------------- */
-  /* ---------------------LRN-------------------- */
-  .lrnList{
-    margin-top: 1rem;
-    width: 100%;
-  }
-  .lrnField{
-    display: flex;
-    flex-direction: row;
-  }
-  .lrnTitle{
-    padding-right: 1rem;
-  }
-  .lrn-field{
-    border: none;
-    border-bottom: 2px solid #000;
-  }
-  /* ---------------------LRN-------------------- */
-  /* ---------------------DOB-------------------- */
-  .dobList{
-    margin-top: 1rem;
-    width: 100%;
-  }
-  .dobField{
-    display: flex;
-    flex-direction: row;
-  }
-  .dobTitle{
-    min-width: 7rem;
-    padding-right: 1rem;
-  }
-  .dob-field{
-    width: 8rem;
-    border: none;
-    border-bottom: 2px solid #000;  }
-  .dobDiv{
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-  }
-  /* ---------------------DOB-------------------- */
-  /* ---------------------Birtthplace-------------------- */
-  .bpList{
-    margin-top: 1rem;
-    width: 100%;
-  }
-  .bpField{
-    display: flex;
-    flex-direction: row;
-  }
-  .bpTitle{
-    padding-right: 1rem;
-  }
-  .bp-field{
-    width: 25.5rem;
-    border: none;
-    border-bottom: 2px solid #000;  
-  }
-  /* ---------------------Birthplace-------------------- */
-  /* ---------------------PARENT-------------------- */
-  .parentList{
-    margin-top: 1rem;
-    width: 100%;
-  }
-  .parentField{
-    display: flex;
-    flex-direction: row;
-  }
-  .parentTitle{
-    padding-right: 1rem;
-  }
-  .parent-field{
-    width: 23rem;
-    border: none;
-    border-bottom: 2px solid #000;
-  }
-  /* ---------------------PARENT-------------------- */
-  /* ---------------------address-------------------- */
-  .addressList{
-        margin-top: 1rem;
-    width: 100%;
-  }
-  .addressField{
-    display: flex;
-    flex-direction: row;
-  }
-  .addressTitle{
-    padding-right: 1rem;
-  }
-  .address-field{
-    width: 73rem;
-    border: none;
-    border-bottom: 2px solid #000;
-  }
-  /* ---------------------address-------------------- */
-    /* ---------------------LRN-------------------- */
-    .idList{ 
-      margin-top: 1rem;
-      width: 100%;
-    }
-    .idField{
-      display: flex;
-      flex-direction: row;
-    }
-    .idTitle{
-      text-align: center;
-      width: 7rem;
-      padding-right: 1rem;
-    }
-    .id-field{
-      width: 15rem;
-      border: none;
-      border-bottom: 2px solid #000;
-    }
-    /* ---------------------LRN-------------------- */
-    /* ---------------------LRN-------------------- */
-    .regionList{ 
-      margin-top: 5.3rem;
-      width: 100%;
-    }
-    .regionField{
-      display: flex;
-      flex-direction: row;
-    }
-    .regionTitle{
-      padding-right: 1rem;
-    }
-    .region-field{
-      text-align: center;
-      width: 17rem;
-      border: none;
-      border-bottom: 2px solid #000;
-    }
-    /* ---------------------LRN-------------------- */
-    /* ---------------------LRN-------------------- */
-    .divisionList{ 
-      margin-top: 3rem; 
-      width: 100%;
-    }
-    .divisionField{
-      display: flex;
-      flex-direction: row;
-    }
-    .divisionTitle{
-      padding-right: 1rem;
-    }
-    .division-field{
-      text-align: center;
-      width: 17rem;
-      border: none;
-      border-bottom: 2px solid #000;
-    }
-    /* ---------------------LRN-------------------- */
-    /* ---------------------LRN-------------------- */
-    .phoneList{ 
-      margin-top: 1rem;
-      width: 100%;
-    }
-    .phoneField{
-      display: flex;
-      flex-direction: row;
-    }
-    .phoneTitle{
-      width: 10rem;
-      padding-right: 1rem;
-    }
-    .phone-field{
-      width: 15rem;
-      border: none;
-      border-bottom: 2px solid #000;
-    }
-    /* ---------------------LRN-------------------- */
-  .left{
-    width: 50%;
-  }
-  .right{
-    width: 50%;
-  }
-  table,
-  tr,
-  td{
-    outline: 1px solid #000;
-    color: #000;
-    padding: none;
-    margin: none;
-    font-size: 0.9em;
-  }
-  .form-table{
-    width: 100%;
-  }
+        {{this.style}}
       </style>
 <body>
     <header>
         <div class="container-fluid form-header">
             <section class="form-logo">
-                <img src="My project (1).png" alt="">
+                <img src="My project (1).png" fetchpriority="high" loading="lazy">
             </section>
             <article class="form-title">
                 <strong>REPUBLIC OF THE PHILIPPINES <br> DEPARTMENT OF EDUCATION <br> DIVISION OF ZAMBOANGA CITY</strong>
@@ -290,7 +37,7 @@
                 <small>Zamboanga City</small>
             </article>
             <section class="form-logo">
-                <img src="sidebar-logo.png" alt="">
+                <img src="sidebar-logo.png" fetchpriority="high" loading="lazy">
             </section>
         </div>
         <div class="container-fluid">
@@ -314,7 +61,7 @@
                                     <label for="lname">First</label>
                                 </div>
                                 <div class='nameDiv'>
-                                    <input class="name-field" <%=student.middleName%>>
+                                    <input class="name-field" value="<%=student.middleName%>">
                                     <label for="lname">Middle</label>
                                 </div>
                             </div>
@@ -434,201 +181,230 @@
                 </tr>
                 <tr>
                     <td>Date of Examination</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= (new Date(medicalRecord.createdAt).getMonth() % 12) + 1 %>/<%= new Date(medicalRecord.createdAt).getDate()%>/<%= new Date(medicalRecord.createdAt).getFullYear()%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Temperature/BP</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.temperature%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Heart Rate/ Pulse Rate/ Respiratory Rate</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.heartPulseRespRate%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Height (in cm)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.height%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Weight (in kg)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.weight%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Nutritional Status (NS)(BMI/Wt-for-Age)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.nutStatBM%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Nutritional Status (NS)(Height/Wt-for-Age)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.nutStatHeight%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Vision Screening using appropriate chart</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.visionScreening%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Auditory Screening (Tuning Fork)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.auditoryScreening%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Skin/Scalp</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.skinScalp%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Eyes/Ears/Nose</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.eyesEarsNose%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Mouth/Throat/Neck</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.mouthThroatNeck%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Lungs/Hearth</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.lungsHeart%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Abdomen</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.abdomen%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Deformities</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.deformities%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Iron Supplementation (Check list)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <% if (medicalRecord.ironSupplementation) { %>
+                            <td>&#9745;</td>
+                        <% } else {  %>
+                        <td>X</td>
+                        <% } %>
+                        
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Deworming (Check list)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <% if (medicalRecord.deworming) { %>
+                            <td>&#9745;</td>
+                        <% } else {  %>
+                        <td>X</td>
+                        <% } %>
+                        
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Immunization (Specify what kind)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <% if (medicalRecord.immunization) { %>
+                         <td><%= medicalRecord.immunization %></td>
+                        <% } else {%>
+                            <td> X</td>
+                        <% } %>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 <tr>
                     <td>SBFP (Check list)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <% if (medicalRecord.SBFPBeneficiary) { %>
+                            <td>&#9745;</td>
+                        <% } else {  %>
+                        <td>X</td>
+                        <% } %>
+                        
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>4Ps Beneficiary (Check list)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <% if (medicalRecord.fourPS) { %>
+                            <td>&#9745;</td>
+                        <% } else {  %>
+                        <td>X</td>
+                        <% } %>
+                        
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td>Menarche (Check list)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <% if (medicalRecord.menarche) { %>
+                            <td>&#9745;</td>
+                        <% } else {  %>
+                        <td>X</td>
+                        <% } %>
+                        
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td><strong>Examined by:</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <% student.medical.forEach(medicalRecord => { %>
+                        <td> <%= medicalRecord.examinedBy%></td>
+                    <% }) %>
+                    <% for( let index = student.medical.length; index < 6; index++ ) { %>
+                        <td></td>
+                    <% } %>
                 </tr>
             </tbody>
           </table>

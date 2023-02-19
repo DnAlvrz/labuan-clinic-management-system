@@ -65,6 +65,10 @@ const medicalRecordSchema = new mongoose.Schema({
         type:String,
         required: true,
     },
+    immunization: {
+        type:String,
+        required: false,
+    },
     deworming: {
         type:Boolean,
         default:false,
