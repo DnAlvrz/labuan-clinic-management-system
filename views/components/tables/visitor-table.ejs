@@ -15,6 +15,7 @@
     <tbody id="myTable">
       <% if (visitors) { %>
        <% visitors.forEach(visitor => { %>
+        <tr>
         <td data-label="ID No.">
           <%= visitor.fullname %>
         </td>
@@ -48,6 +49,7 @@
             Delete
         </button>
         </td>
+      </tr>
        <% }) %>
       <% } %>
 

@@ -26,7 +26,6 @@ const newVisitor = async (req, res) => {
             lostOfTasteOrSmell,
             diffBreathing,
             exposedToCovid,
-            traveledOutside,
             certifiedTrue,
         } = req.body;
         if(
@@ -42,23 +41,8 @@ const newVisitor = async (req, res) => {
             !lostOfTasteOrSmell ||
             !diffBreathing ||
             !exposedToCovid ||
-            !traveledOutside ||
             !certifiedTrue
         ) {
-            console.log( fullname,
-                contactNo,
-                temp,
-                fever,
-                coughAndColds,
-                bodyPain,
-                soreThroat,
-                headAche,
-                diarrhea,
-                lostOfTasteOrSmell,
-                diffBreathing,
-                exposedToCovid,
-                certifiedTrue,
-            )
             req.flash('error', 'Please fill in all fields');
             res.redirect('/visit')
             return;

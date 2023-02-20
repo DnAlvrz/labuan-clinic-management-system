@@ -34,8 +34,73 @@ const deleteVisitor = async (req, res) => {
     }
 }
 
+const newVisitor = async (req, res) => {
+    try {
+        const {
+            fullname,
+            contactNo,
+            temp,
+            fever,
+            coughAndColds,
+            bodyPain,
+            soreThroat,
+            headAche,
+            diarrhea,
+            lostOfTasteOrSmell,
+            diffBreathing,
+            exposedToCovid,
+            traveledOutside,
+            certifiedTrue,
+        } = req.body;
+        if(
+            !fullname ||
+            !contactNo ||
+            !temp ||
+            !fever ||
+            !coughAndColds ||
+            !bodyPain ||
+            !soreThroat ||
+            !headAche ||
+            !diarrhea ||
+            !lostOfTasteOrSmell ||
+            !diffBreathing ||
+            !exposedToCovid ||
+            !certifiedTrue
+        ) {
+            req.flash('error', 'Please fill in all fields');
+            res.redirect('/visitors')
+            return;
+        } else {
+            const newVisitor = await Visitor.create({
+                fullname,
+                contactNo,
+                temp,
+                fever,
+                coughAndColds,
+                bodyPain,
+                soreThroat,
+                headAche,
+                diarrhea,
+                lostOfTasteOrSmell,
+                diffBreathing,
+                exposedToCovid,
+                traveledOutside,
+                certifiedTrue,
+            });
+            if(newVisitor) {
+                req.flash('message', 'Form submitted');
+                res.redirect('/visitors')
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        req.flash('error', 'Something went wrong.')
+        res.redirect('/visitors');
+    }
+}
 
 module.exports = {
     visitorList,
     deleteVisitor,
+    newVisitor
 }
