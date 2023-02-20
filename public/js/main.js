@@ -266,3 +266,25 @@ const removedChecked = (id) => {
   const checkBox = document.getElementById(id);
   checkBox.removeAttribute('checked')
 }
+
+const deleteVisitor = (visitorId) => {
+  document.getElementById('visitorId').value=visitorId;
+}
+
+
+const viewVisitor = (visitor) => {
+  document.getElementById('visitorFullname').value =visitor.fullname
+  document.getElementById('visitorTemp').value = visitor.temp
+  document.getElementById('visitorContactNo').value = visitor.contactNo
+
+  document.getElementById('visitorFever').value =visitor.fever
+  document.getElementById('visitorCough').value = visitor.coughAndColds
+  document.getElementById('visitorBody').value = visitor.bodyPain
+  document.getElementById('visitorThroat').value = visitor.soreThroat
+  document.getElementById('visitorHead').value = visitor.headAche
+  document.getElementById('visitorDiarrhea').value =visitor.diarrhea
+  document.getElementById('visitorTaste').value =visitor.lostOfTasteOrSmell
+  document.getElementById('visitorBreath').value = visitor.diffBreathing
+  document.getElementById('visitorExposed').value = visitor.exposedToCovid
+  document.getElementById('visitorTraveled').value =visitor.traveledOutside || 'None'
+}

@@ -57,7 +57,6 @@ const newVisitor = async (req, res) => {
                 lostOfTasteOrSmell,
                 diffBreathing,
                 exposedToCovid,
-                traveledOutside,
                 certifiedTrue,
             )
             req.flash('error', 'Please fill in all fields');

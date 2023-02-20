@@ -17,10 +17,20 @@ const visitorList = async (req, res) => {
 
 const deleteVisitor = async (req, res) => {
     try {
-        
-        res.render('pages/visitorForm', { title: 'Visitors', path:'visitors' });
+        const id = req.body.visitorId
+        const visitor = await Visitor.findOne({_id:id});
+        if(!visitor) {
+            req.flash('Error', "Visitor not found.")
+            res.redirect('/visitors');
+            return;
+        }
+        await visitor.remove();
+        req.flash("message", "Video has been deleted")
+        res.redirect('/visitors');
     } catch (error) {
-        
+        console.error(error)
+        req.flash('error', 'Something went wrong');
+        res.redirect('/visitors'); 
     }
 }
 
