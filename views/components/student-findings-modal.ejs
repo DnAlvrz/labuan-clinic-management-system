@@ -1,13 +1,5 @@
 <div class="container-fluid">
-
-    <button 
-      type="button" 
-      onclick="clearForm('patientForm', '/patients')" 
-      class="btn btn-primary" 
-      data-mdb-toggle="modal" 
-      data-mdb-target="#createFindingsModal">
-      Create Medical Record
-    </button>
+   
 
   <div 
     class="modal modal-lg fade" 
@@ -23,17 +15,17 @@
         </div>
         <div class="modal-body">
             <div class="form-container">
-                <form action="/medical" class="student-form" method="POST">
+                <form action="/medical?_method=PUT" class="student-form" method="POST" id="editMedicalRecordForm">
+                    <input name="recordId" type="hidden" id="recordId"/>
                     <div class="row">
+                        
                         <div class="col form col">
-                            <label for="">Student</label>
-                            <select const  class="select form-select-btn" name="studentId" required >
-
-                            </select>
+                            <label for="studentName">Student</label>
+                            <input name="studentName" type="text" id="studentName" class="form-control" disabled/>
                         </div>
                         <div class="col form col">
                             <label for="">Year Level</label>
-                            <select class="select form-select-btn" name="grade" required >
+                            <select class="select form-select-btn" name="grade" id="recordGrade" >
                                 <option value="7">Grade 7</option>
                                 <option value="8">Grade 8</option>
                                 <option value="9">Grade 9</option>
@@ -51,13 +43,13 @@
                     <div class="row mb-4 form-row">
                         <div class="col">
                             <div class="form-outline">
-                                <input name="temperature" type="text" id="region" class="form-control" required/>
+                                <input name="temperature" type="text" id="temperature" class="form-control" required/>
                                 <label class="form-label" for="region">Temperature/BP</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-outline">
-                                <input name="heartPulseRespRate" type="text" id="region" class="form-control" required/>
+                                <input name="heartPulseRespRate" type="text" id="heartPulseRespRate" class="form-control" required/>
                                 <label class="form-label" for="region">Heart Rate/Pulse Rate/Respiratory Rate</label>
                             </div>
                         </div>
@@ -65,20 +57,21 @@
                     <div class="row mb-4 form-row">
                         <div class="col">
                             <div class="form-outline">
-                                <input name="height" type="number" id="contactNo" class="form-control" required  />
-                                <label class="form-label" for="contactNo">Height (in cm)</label>
+                                <input name="height" type="number" id="height" class="form-control" required  />
+                                <label class="form-label" for="height">Height (in cm)</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-outline">
-                                <input name="weight" type="number" id="contactNo" class="form-control" required  />
-                                <label class="form-label" for="contactNo">Weight (in kg)</label>
+                                <input name="weight" type="number" id="weight" class="form-control" required  />
+                                <label class="form-label" for="                                <input name="weight" type="number" id="weight" class="form-control" required  />
+                                ">Weight (in kg)</label>
                             </div>
                         </div>
                     </div>
                     <div class="row mb-4 form-row">
                         <div class="col">
-                            <select name="nutStatBM" class="select form-select-btn" required >
+                            <select name="nutStatBM" class="select form-select-btn" id="nutStatBM" required >
                                 <option value="Normal Weigh" disabled selected hidden>Nutritional Status(NS)(BM/Wt-for-Age)</option>
                                 <option value="Normal Weight">Normal Weight</option>
                                 <option value="Wasted/Underweight">Wasted/Underweight</option>
@@ -88,7 +81,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <select name="nutStatHeight" class="select form-select-btn" required >
+                            <select name="nutStatHeight" id="nutStatHeight" class="select form-select-btn" required >
                                 <option value="Normal Height" disabled selected hidden>Nutritional Status(NS)(Height-for-Age)</option>
                                 <option value="Normal Height">Normal Height</option>
                                 <option value="Stunted">Stunted</option>
@@ -99,14 +92,14 @@
                     </div>
                     <div class="row mb-4 form-row">
                         <div class="col">
-                            <select name="visionScreening" class="select form-select-btn" required >
+                            <select name="visionScreening" id="visionScreening" class="select form-select-btn" required >
                                 <option value="Passed" disabled selected hidden>Vision Screening using appropriate chart<option>
                                 <option value="Passed">Passed</option>
                                 <option value="Failed">Failed</option>
                             </select>
                         </div>
                         <div class="col">
-                            <select name="auditoryScreening" class="select form-select-btn" required >
+                            <select name="auditoryScreening" id="auditoryScreening" class="select form-select-btn" required >
                                 <option value="Passed" disabled selected hidden>Auditory Screening(Tuning Fork)</option>
                                 <option value="Passed">Passed</option>
                                 <option value="Failed">Failed</option>
@@ -115,7 +108,7 @@
                     </div>
                     <div class="row mb-4 form-row">
                         <div class="col">
-                            <select name="skinScalp"class="select form-select-btn" required >
+                            <select name="skinScalp" id="skinScalp" class="select form-select-btn" required >
                                 <option value="Normal" disabled selected hidden>Skin/Scalp</option>
                                 <option value="Normal">Normal</option>
                                 <option value="Presence of Lice">Presence of Lice</option>
@@ -131,7 +124,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <select name="eyesEarsNose" class="select form-select-btn" required >
+                            <select name="eyesEarsNose" id="eyesEarsNose" class="select form-select-btn" required >
                                 <option value="Normal" disabled selected hidden>Eyes/Ears/Nose</option>
                                 <option value="Normal">Normal</option>
                                 <option value="Stye">Stye</option>
@@ -150,7 +143,7 @@
                     </div>
                     <div class="row mb-4 form-row">
                         <div class="col">
-                            <select name="mouthThroatNeck" class="select form-select-btn" required >
+                            <select name="c" id="mouthThroatNeck" class="select form-select-btn" required >
                                 <option value="Normal" disabled selected hidden>Mouth/Throat/Neck</option>
                                 <option value="Normal">Normal</option>
                                 <option value="Enlarged tonsils">Enlarged tonsils</option>
@@ -161,7 +154,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <select name="lungsHeart" class="select form-select-btn" required >
+                            <select name="lungsHeart" id="lungsHeart" class="select form-select-btn" required >
                                 <option value="Normal" disabled selected hidden>Lungs//Heart</option>
                                 <option value="Normal">Normal</option>
                                 <option value="Rales">Rales</option>
@@ -174,7 +167,7 @@
                     </div>
                     <div class="row mb-4 form-row">
                         <div class="col">
-                            <select name="abdomen" class="select form-select-btn" required >
+                            <select name="abdomen" id="abdomen" class="select form-select-btn" required >
                                 <option value="" disabled selected hidden>Abdomen</option>
                                 <option value="Normal">Normal</option>
                                 <option value="Distended">Distended</option>
@@ -185,7 +178,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <select name="deformities" class="select form-select-btn" required >
+                            <select name="deformities" id="deformities" class="select form-select-btn" required >
                                 <option value="" disabled selected hidden>Deformities</option>
                                 <option value="None">None</option>
                                 <option value="Aquired">Aquired</option>
@@ -224,7 +217,7 @@
                     <div class="row mb-4 form-row">
                         <div class="col">
                             <div class="form-check">
-                                <input name="fourPS" class="form-check-input" type="checkbox" value="true" id="4ps" />
+                                <input name="fourPS" class="form-check-input" type="checkbox" value="true" id="4ps" >
                                 <label class="form-check-label" for="4ps">4ps Beneficiary</label>
                             </div>
                         </div>

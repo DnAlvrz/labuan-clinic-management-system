@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {medicalRec, medicalForm, newMedicalRecord, editMedicalRecord}  = require('../controllers/medicalRecController')
+const {medicalRec, medicalForm, newMedicalRecord, editMedicalRecord,editMedicalForm}  = require('../controllers/medicalRecController')
 
 
 router.get('/',medicalRec);

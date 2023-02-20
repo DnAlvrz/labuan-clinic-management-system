@@ -143,3 +143,126 @@ const studentProfile = (studentId) => {
     })
 
 }
+
+const editMedicalRecord = (record)=> {
+  const form = document.getElementById('editMedicalRecordForm')
+  form.reset();
+  removedChecked('ironSupp');
+  removedChecked('deworming');
+  removedChecked('beneficiary');
+  removedChecked('4ps');
+  removedChecked('menarche');
+  document.getElementById('studentName').value=`${record.student.firstName} ${record.student.middleName[0]}. ${record.student.lastName}`;
+
+
+  const grade = document.getElementById('recordGrade');
+  for (let i = 0; i < grade.options.length; i++) {
+    option = grade.options[i];
+    if (option.value === record.grade) {
+        option.selected = true;
+    }
+  }
+  document.getElementById('recordId').value=record._id;
+  document.getElementById('temperature').value=record.temperature;
+  document.getElementById('height').value=record.height;
+  document.getElementById('weight').value=record.weight;
+  document.getElementById('examinedBy').value=record.examinedBy;
+  document.getElementById('immunization').value=record.immunization || "";
+  document.getElementById('others').value=record.others;
+  document.getElementById('heartPulseRespRate').value=record.heartPulseRespRate;
+  const nutStatBM = document.getElementById('nutStatBM');
+  for (let i = 0; i < nutStatBM.options.length; i++) {
+    option = nutStatBM.options[i];
+    if (option.value === record.nutStatBM) {
+        option.selected = true;
+    }
+  }
+  const nutStatHeight = document.getElementById('nutStatHeight');
+  for (let i = 0; i < nutStatHeight.options.length; i++) {
+    option = nutStatHeight.options[i];
+    if (option.value === record.nutStatHeight) {
+        option.selected = true;
+    }
+  }
+  const visionScreening = document.getElementById('visionScreening');
+  for (let i = 0; i < visionScreening.options.length; i++) {
+    option = visionScreening.options[i];
+    if (option.value === record.visionScreening) {
+        option.selected = true;
+    }
+  }
+
+  const auditoryScreening = document.getElementById('auditoryScreening');
+  for (let i = 0; i < auditoryScreening.options.length; i++) {
+    option = auditoryScreening.options[i];
+    if (option.value === record.auditoryScreening) {
+        option.selected = true;
+    }
+  }
+
+  const skinScalp = document.getElementById('skinScalp');
+  for (let i = 0; i < skinScalp.options.length; i++) {
+    option = skinScalp.options[i];
+    if (option.value === record.skinScalp) {
+        option.selected = true;
+    }
+  }
+
+  const eyesEarsNose = document.getElementById('eyesEarsNose');
+  for (let i = 0; i < eyesEarsNose.options.length; i++) {
+    option = eyesEarsNose.options[i];
+    if (option.value === record.eyesEarsNose) {
+        option.selected = true;
+    }
+  }
+  
+  const mouthThroatNeck = document.getElementById('mouthThroatNeck');
+  for (let i = 0; i < mouthThroatNeck.options.length; i++) {
+    option = mouthThroatNeck.options[i];
+    if (option.value === record.mouthThroatNeck) {
+        option.selected = true;
+    }
+  }
+
+  const lungsHeart = document.getElementById('lungsHeart');
+  for (let i = 0; i < lungsHeart.options.length; i++) {
+    option = lungsHeart.options[i];
+    if (option.value === record.lungsHeart) {
+        option.selected = true;
+    }
+  }
+  const abdomen = document.getElementById('abdomen');
+  for (let i = 0; i < abdomen.options.length; i++) {
+    option = abdomen.options[i];
+    if (option.value === record.abdomen) {
+        option.selected = true;
+    }
+  }
+
+  const deformities = document.getElementById('deformities');
+  for (let i = 0; i < deformities.options.length; i++) {
+    option = deformities.options[i];
+    if (option.value === record.deformities) {
+      option.selected = true;
+    }
+  }
+
+  checkBoxIsChecked('ironSupp', record.ironSupplementation)
+  checkBoxIsChecked('deworming', record.deworming);
+  checkBoxIsChecked('beneficiary', record.SBFPBeneficiary);
+  checkBoxIsChecked('4ps', record.fourPS);
+  checkBoxIsChecked('menarche', record.menarche);
+
+}
+
+const checkBoxIsChecked = (id, value) => {
+  if(value){
+    const checkBox = document.getElementById(id);
+    checkBox.setAttribute('checked', value)
+  }
+}
+
+const removedChecked = (id) => {
+  const checkBox = document.getElementById(id);
+  checkBox.removeAttribute('checked')
+}

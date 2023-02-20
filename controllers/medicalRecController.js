@@ -1,5 +1,6 @@
 const MedicalRecord = require('../models/MedicalRecord');
 const Student = require('../models/Student');
+
 const medicalRec = async (req, res) => {
     try {
         const medicalRecords = await MedicalRecord.find().populate('student');
@@ -29,8 +30,6 @@ const newMedicalRecord = async(req,res) => {
     try {
         const {
             studentId,
-            schooldId,
-            schoolYear,
             grade,
             temperature,
             heartPulseRespRate,
@@ -112,7 +111,7 @@ const newMedicalRecord = async(req,res) => {
             student.medical.push(newMedicalRecord._id);
             await student.save();
             req.flash('message', "Medical form added.")
-            res.redirect('/medical/form')
+            res.redirect('/medical/form');
         }
     } catch (error) {
         console.log(error)
@@ -122,23 +121,26 @@ const newMedicalRecord = async(req,res) => {
 };
 
 const editMedicalRecord = async (req,res) => {
+    console.log('hit')
     try {
-        const id = req.body.medicalRecordId
+        const id = req.body.recordId;
         const medicalRecord = await MedicalRecord.findOne({_id:id});
-        if(!medicalRecord){
-            res.render('/medical')
+        if(!medicalRecord){ 
+            req.flash('error', 'Medical Record not found');
+            res.redirect('/medical');
+            return;
         } else {
-
             for(const key of Object.keys(req.body)) {
                 medicalRecord[key] = req.body[key]
             }
             await medicalRecord.save();
-            req.flash('message', 'Student medical record updated');
+            req.flash('message', 'Medical Record updated');
             res.redirect('/medical');
         }
     } catch (error) {
         console.log(error);
-        res.render('error', error);
+        req.flash('error', 'Something went wrong.');
+        res.redirect('/medical');
     }
 };
 

@@ -5,7 +5,7 @@ const  bcrypt = require('bcrypt');
 function init (passport) {
   const authUser = async(username, password, done) => {
     try {
-      const user = await User.findOne({where: {user_name:username}});
+      const user = await User.findOne({_id:id});
       if(user == null) {
         return done(null, false, {message: `Account does not exist`});
       }
@@ -29,7 +29,7 @@ function init (passport) {
   })
   passport.deserializeUser( async (id, done) => {
     try {
-      const user = await User.findOne({where:{id}})
+      const user = await User.findOne({_id:id})
       done(null, user)
     } catch (error) {
       done(error)
