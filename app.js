@@ -1,3 +1,4 @@
+// Imports
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -9,23 +10,25 @@ const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
 
-
+//Routers
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const authenticationRouter = require('./routes/auth');
 const studentRouter = require('./routes/students');
 const patientRouter = require('./routes/patients');
 const visitorRouter = require('./routes/visitor');
 const medicalRecRouter = require('./routes/medicalRecord');
 const apiRouter = require('./routes/api');
 const printRouter = require('./routes/print');
+const LocalStrategy = require('passport-local').Strategy;
+// Middlwares
+const auth = require('./middlewares/auth');
 
-const Student  = require('./models/Student');
-const initPassport = require('./passport-config');
+// Models
+const User =require('./models/User')
 const app = express();
 
 connectDatabase();
-initPassport(passport);
+
 app.use(methodOverride('_method'));
 
 // view engine setup
@@ -51,19 +54,41 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 app.use((req, res,next) => {
   res.locals.currentUser = req.user;
   next();
 })
 
-app.use('/', indexRouter);
-app.use('/auth', authenticationRouter);
-app.use('/users', usersRouter);
-app.use('/students', studentRouter);
-app.use('/patients', patientRouter)
-app.use('/visitors', visitorRouter);
-app.use('/medical', medicalRecRouter);
-app.use('/print', printRouter);
+app.get('/login', auth.checkisNotAuth,(req, res, next)=> {
+  res.render('pages/auth/login', {title:'Login'})
+});
+
+app.post('/auth', auth.checkisNotAuth, passport.authenticate('local', {
+  successRedirect: '/dashboard',
+  failureRedirect: '/login',
+  failureFlash: true //'Invalid username or password.'
+}));
+
+app.get('/logout', auth.checkAuth,(req, res)=> {
+    req.logOut( function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+      }
+    );
+});
+
+app.use('/',indexRouter);
+app.use('/users', auth.checkAuth,usersRouter);
+app.use('/students', auth.checkAuth,studentRouter);
+app.use('/patients', auth.checkAuth,patientRouter)
+app.use('/visitors',auth.checkAuth, visitorRouter);
+app.use('/medical',auth.checkAuth, medicalRecRouter);
+app.use('/print', auth.checkAuth,printRouter);
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler

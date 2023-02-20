@@ -1,8 +1,13 @@
 var mongoose = require('mongoose');
 
 const visitorSchema = new mongoose.Schema({
-    name : {
+    fullname : {
         type: String,
+        required:true,
+    },
+    temp :{
+        type: String,
+        required: true,
     },
     fever: {
         type:Boolean,

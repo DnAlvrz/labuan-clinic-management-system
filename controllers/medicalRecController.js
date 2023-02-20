@@ -4,7 +4,6 @@ const Student = require('../models/Student');
 const medicalRec = async (req, res) => {
     try {
         const medicalRecords = await MedicalRecord.find().populate('student');
-        console.log(medicalRecords);
         res.render('pages/medicalRecord', { title: 'Patient', medicalRecords, path:'medicalRecord'});
     } catch (error) {
         console.log(error);
@@ -121,7 +120,6 @@ const newMedicalRecord = async(req,res) => {
 };
 
 const editMedicalRecord = async (req,res) => {
-    console.log('hit')
     try {
         const id = req.body.recordId;
         const medicalRecord = await MedicalRecord.findOne({_id:id});

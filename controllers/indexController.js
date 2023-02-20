@@ -6,13 +6,17 @@ const dashboard = async (req, res) => {
     res.render('pages/dashboard', { title: 'Dashboard', path:'dashboard' });
 }
 
-const loginUser = async (req, res) => {
-    res.render('pages/auth/login', { title: 'Login' });
+const visitorForm = async (req, res) => {
+    res.render('pages/visitorForm', { title: 'Visitor Form' });
 }
 
+const newVisitor = async (req, res) => {
+    res.render('pages/auth/login', { title: 'Login' });
+}
 
 module.exports = {
     index,
     dashboard,
-    loginUser,
+    visitorForm,
+    newVisitor,
 }

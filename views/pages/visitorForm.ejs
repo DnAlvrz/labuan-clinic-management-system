@@ -10,27 +10,27 @@
             <div class="row mb-4 form-row">
                 <div class="col">
                     <div class="form-outline">
-                    <input type="text" id="firstname" class="form-control" required />
-                    <label class="form-label" for="firstname">Full name</label>
+                        <input name="fullname" type="text" id="fullname" class="form-control" required />
+                        <label class="form-label" for="firstname">Full name</label>
                     </div>
                 </div>
                 <div class="col">
-                        <div class="form-outline">
-                        <input type="date" id="lastname" class="form-control" required  />
-                        <label class="form-label" for="lastname">Date</label>
-                        </div>
+                    <div class="form-outline">
+                        <input name="date" type="date" id="date" class="form-control" required  />
+                        <label class="form-label" for="date">Date</label>
+                    </div>
                 </div>
             </div>
             <div class="row mb-4 form-row">
                 <div class="col">
                     <div class="form-outline">
-                        <input name="lrn" type="text" id="lrn" class="form-control" required />
-                        <label class="form-label" for="lrn">Contact No.</label>
+                        <input name="contactNo" type="text" id="contactNo" class="form-control" required />
+                        <label class="form-label" for="contactNo">Contact No.</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-outline">
-                        <input type="text" id="schoolId" class="form-control" required  />
+                        <input name="temp" type="text" id="schoolId" class="form-control" required  />
                         <label class="form-label" for="schoolId">Temp</label>
                     </div>
                 </div>
@@ -40,10 +40,15 @@
                     <div class="form-outline">
                         <strong><p>1. Are you Experiencing or did you have any of the following in the past 14 days?</p></strong>
                         <strong><label class="form-label" for="schoolId">A. FEVER</label></strong>
-                        <label class="form-label space" for="schoolId">YES</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
-                        <label class="form-label" for="schoolId">NO</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <div class=" mx-5 orm-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="fever" id="fever" value="true" />
+                            <label class="form-check-label" for="fever">Yes</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="fever" id="inlineRadio2" value="false" />
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -52,9 +57,9 @@
                     <div class="form-outline">
                         <strong><label class="form-label" for="schoolId">B. COUGH AND COLD</label></strong>
                         <label class="form-label space" for="schoolId">YES</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
-                        <label class="form-label" for="schoolId">NO</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  required />
+                        <input name="fever" class="form-check-input" type="radio" value="true" id="flexCheckDefault" required/>
+                        <label class="form-label" for="noFever">NO</label>
+                        <input name="fever" class="form-check-input" type="radio" value="false" id="noFever"  required />
                     </div>
                 </div>
             </div>
@@ -63,9 +68,9 @@
                     <div class="form-outline">
                         <strong><label class="form-label" for="schoolId">C. BODY PAINS</label></strong>
                         <label class="form-label space" for="schoolId">YES</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                         <label class="form-label" for="schoolId">NO</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                     </div>
                 </div>
             </div>
@@ -74,9 +79,9 @@
                     <div class="form-outline">
                         <strong><label class="form-label" for="schoolId">D. SORE THROAT</label></strong>
                         <label class="form-label space" for="schoolId">YES</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                         <label class="form-label" for="schoolId">NO</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                     </div>
                 </div>
             </div>
@@ -85,9 +90,9 @@
                     <div class="form-outline">
                         <strong><label class="form-label" for="schoolId">E. HEADACHE</label></strong>
                         <label class="form-label space" for="schoolId">YES</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                         <label class="form-label" for="schoolId">NO</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                     </div>
                 </div>
             </div>
@@ -96,9 +101,9 @@
                     <div class="form-outline">
                         <strong><label class="form-label" for="schoolId">F. DIARHEA</label></strong>
                         <label class="form-label space" for="schoolId">YES</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                         <label class="form-label" for="schoolId">NO</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                     </div>
                 </div>
             </div>
@@ -107,9 +112,9 @@
                     <div class="form-outline">
                         <strong><label class="form-label" for="schoolId">G. LOSS OF TASTE OR SMELL</label></strong>
                         <label class="form-label space" for="schoolId">YES</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                         <label class="form-label" for="schoolId">NO</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                     </div>
                 </div>
             </div>
@@ -118,9 +123,9 @@
                     <div class="form-outline">
                         <strong><label class="form-label" for="schoolId">H. DIFFICULTY BREATHING</label></strong>
                         <label class="form-label space" for="schoolId">YES</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                         <label class="form-label" for="schoolId">NO</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                     </div>
                 </div>
             </div>
@@ -129,9 +134,9 @@
                     <div class="form-outline">
                         <strong><p>2. Have you been exposed with a probable or comfirmed COVID-19 case within 1meter and for more than 15minutes for the past 14 days?</p></strong>
                         <label class="form-label space" for="schoolId">YES</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                         <label class="form-label" for="schoolId">NO</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                        <input class="form-check-input" type="radio" value="" id="flexCheckDefault" required/>
                     </div>
                 </div>
             </div>
