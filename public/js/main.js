@@ -39,19 +39,55 @@ function updateStudent (student) {
   document.getElementById('firstname').value = student.firstName;
   document.getElementById('lastname').value = student.lastName;
   document.getElementById('middlename').value = student.middleName;
-  document.getElementById('grade').value = student.grade;
   document.getElementById('schoolId').value = student.schoolId;
   document.getElementById('lrn').value = student.lrn;
   document.getElementById('gender').value = student.gender;
   document.getElementById('section').value = student.section;
   document.getElementById('contactNum').value = student.contactNum;
   document.getElementById('contactPersonNum').value = student.contactPersonNum;
-  document.getElementById('month').value = student.dob.month;
-  document.getElementById('day').value = student.dob.day;
-  document.getElementById('year').value = student.dob.year;
   document.getElementById('birthPlace').value = student.birthPlace;
   document.getElementById('contactPerson').value = student.contactPerson;
   document.getElementById('address').value = student.address;
+
+  for (let i = 0; i < gender.options.length; i++) {
+    option = gender.options[i];
+    if (option.value === student.gender) {
+        option.selected = true;
+    }
+  }
+
+  const grade = document.getElementById('grade');
+  for (let i = 0; i < grade.options.length; i++) {
+    console.log(student.grade)
+    option = grade.options[i];
+    if (option.value === student.grade) {
+        option.selected = true;
+    }
+  }
+
+  const month = document.getElementById('month');
+  for (let i = 0; i < month.options.length; i++) {
+    option = month.options[i];
+    if (option.value === student.dob.month) {
+        option.selected = true;
+    }
+  }
+  const day = document.getElementById('day');
+  for (let i = 0; i < day.options.length; i++) {
+    console.log(student.dob.day)
+    option = day.options[i];
+    if (option.value === student.dob.day) {
+        option.selected = true;
+    }
+  }
+  const year = document.getElementById('year');
+  for (let i = 0; i < year.options.length; i++) {
+    console.log(student.dob.year)
+    option = year.options[i];
+    if (option.value === student.dob.year) {
+        option.selected = true;
+    }
+  }
   setForm('studentForm', '/students?_method=PUT' );
 }
 
@@ -74,10 +110,19 @@ const addStudentPatient  = (student) => {
   document.getElementById('firstName').value = student.firstName;
   document.getElementById('middleName').value = student.middleName;
   document.getElementById('lastName').value = student.lastName;
-  document.getElementById('grade').value = student.grade;
   document.getElementById('section').value = student.section;
   document.getElementById('schoolId').value = student.schoolId;
+  const grade = document.getElementById('patientGrade');
+  for (let i = 0; i < grade.options.length; i++) {
+    option = grade.options[i];
+    console.log(option.value )
+    if (option.value === student.grade) {
+      console.log(student.grade);
+        option.selected = true;
+    }
+  }
 };
+
 
 
 const updatePatient = (patient) => {
@@ -88,7 +133,7 @@ const updatePatient = (patient) => {
   document.getElementById('firstName').value = patient.firstName;
   document.getElementById('middleName').value = patient.middleName;
   document.getElementById('lastName').value = patient.lastName;
-  document.getElementById('grade').value = patient.grade;
+  document.getElementById('patientGrade').value = patient.grade;
   document.getElementById('section').value = patient.section;
   document.getElementById('schoolId').value = patient.schoolId;
   document.getElementById('recommendation').value = patient.recommendation;
@@ -105,8 +150,6 @@ const studentProfile = (studentId) => {
         return resp.json()
     })
     .then(student => {
-      console.log(student)
-
       document.getElementById('firstNameProfile').value= student.firstName;
       document.getElementById('middleNameProfile').value= student.middleName;
       document.getElementById('lastNameProfile').value= student.lastName;
@@ -273,18 +316,17 @@ const deleteVisitor = (visitorId) => {
 
 
 const viewVisitor = (visitor) => {
-  document.getElementById('visitorFullname').value =visitor.fullname
-  document.getElementById('visitorTemp').value = visitor.temp
-  document.getElementById('visitorContactNo').value = visitor.contactNo
-
-  document.getElementById('visitorFever').value =visitor.fever
-  document.getElementById('visitorCough').value = visitor.coughAndColds
-  document.getElementById('visitorBody').value = visitor.bodyPain
-  document.getElementById('visitorThroat').value = visitor.soreThroat
-  document.getElementById('visitorHead').value = visitor.headAche
-  document.getElementById('visitorDiarrhea').value =visitor.diarrhea
-  document.getElementById('visitorTaste').value =visitor.lostOfTasteOrSmell
-  document.getElementById('visitorBreath').value = visitor.diffBreathing
-  document.getElementById('visitorExposed').value = visitor.exposedToCovid
-  document.getElementById('visitorTraveled').value =visitor.traveledOutside || 'None'
-}
+  document.getElementById('visitorFullname').value =visitor.fullname;
+  document.getElementById('visitorTemp').value = visitor.temp;
+  document.getElementById('visitorContactNo').value = visitor.contactNo;
+  document.getElementById('visitorFever').value =visitor.fever;
+  document.getElementById('visitorCough').value = visitor.coughAndColds;
+  document.getElementById('visitorBody').value = visitor.bodyPain;
+  document.getElementById('visitorThroat').value = visitor.soreThroat;
+  document.getElementById('visitorHead').value = visitor.headAche;
+  document.getElementById('visitorDiarrhea').value =visitor.diarrhea;
+  document.getElementById('visitorTaste').value =visitor.lostOfTasteOrSmell;
+  document.getElementById('visitorBreath').value = visitor.diffBreathing;
+  document.getElementById('visitorExposed').value = visitor.exposedToCovid;
+  document.getElementById('visitorTraveled').value = visitor.traveledOutside || 'None';
+  }

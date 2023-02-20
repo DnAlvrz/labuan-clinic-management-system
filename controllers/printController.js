@@ -22,7 +22,8 @@ const printStudentMedicalRecord = async(req, res) => {
             return;
         }
 
-        const template = fs.readFileSync(path.join(process.cwd(), "/templates/schoolHealthForm.ejs"), 'utf8');
+        // Read HTML Template
+        const template = fs.readFileSync(path.join(process.cwd(), "/templates/schoolHealthForm.html"), 'utf8');
         const content =  ejs.render(template, {student})
         fs.writeFile(path.join(process.cwd(), `/templates/${studentId}.html`), content, () => {
             const filePath = path.join(process.cwd(), `/templates/${studentId}.html`)

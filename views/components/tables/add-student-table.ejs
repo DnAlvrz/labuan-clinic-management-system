@@ -18,12 +18,12 @@
         </th>
     </thead>
     <tbody id="myTable">
+      
       <% if(students) {%>
         <% students.forEach(student => {%>
+          <tr>
         <td data-label="ID No.">
-          <a href="/students/record">
-              <%=student.schoolId%>
-          </a>
+            <%=student.schoolId%>
         </td>
         <td data-label="Name">
           <%=student.firstName%>
@@ -47,6 +47,7 @@
               Add
             </button>
         </td>
+      </tr>
         <%})%>
       <%}%>
     </tbody>

@@ -46,6 +46,10 @@ const studentSchema = new mongoose.Schema({
         type:String,
         required: true,
     },
+    contactPersonNum: {
+        type:String,
+        required: true,
+    },
     address: {
         type:String,
         required: true,
