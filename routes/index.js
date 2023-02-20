@@ -6,7 +6,7 @@ const {index, dashboard, visitorForm, newVisitor} = require('../controllers/inde
 /* GET home page. */
 router.get('/', auth.checkisNotAuth, index);
 router.get('/visit', auth.checkisNotAuth, visitorForm);
-router.post('/', auth.checkisNotAuth, newVisitor);
+router.post('/visit', auth.checkisNotAuth, newVisitor);
 router.get('/dashboard', auth.checkAuth, dashboard);
 
 module.exports = router;

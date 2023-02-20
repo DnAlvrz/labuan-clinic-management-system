@@ -3,20 +3,21 @@ const Visitor = require("../models/Visitor");
 const visitorList = async (req, res) => {
     try {
         const visitors = await Visitor.find();
-        const date = { 
+        const data= { 
             title: 'Visitors', 
             path:'visitors',
             visitors,
         }
-        res.render('pages/visitor', { title: 'Visitors', path:'visitors' });
+        res.render('pages/visitor', data);
     } catch (error) {
         console.log(error)
         res.redirect('/visitors')
     }
 }
 
-const visitorForm = async (req, res) => {
+const deleteVisitor = async (req, res) => {
     try {
+        
         res.render('pages/visitorForm', { title: 'Visitors', path:'visitors' });
     } catch (error) {
         
@@ -26,5 +27,5 @@ const visitorForm = async (req, res) => {
 
 module.exports = {
     visitorList,
-    visitorForm,
+    deleteVisitor,
 }

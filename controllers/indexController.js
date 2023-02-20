@@ -1,3 +1,4 @@
+const Visitor = require('../models/Visitor')
 const index = async (req, res) => {
     res.render('pages/index', { title: 'CMS' });
 }
@@ -11,7 +12,84 @@ const visitorForm = async (req, res) => {
 }
 
 const newVisitor = async (req, res) => {
-    res.render('pages/auth/login', { title: 'Login' });
+    try {
+        const {
+            fullname,
+            contactNo,
+            temp,
+            fever,
+            coughAndColds,
+            bodyPain,
+            soreThroat,
+            headAche,
+            diarrhea,
+            lostOfTasteOrSmell,
+            diffBreathing,
+            exposedToCovid,
+            traveledOutside,
+            certifiedTrue,
+        } = req.body;
+        if(
+            !fullname ||
+            !contactNo ||
+            !temp ||
+            !fever ||
+            !coughAndColds ||
+            !bodyPain ||
+            !soreThroat ||
+            !headAche ||
+            !diarrhea ||
+            !lostOfTasteOrSmell ||
+            !diffBreathing ||
+            !exposedToCovid ||
+            !traveledOutside ||
+            !certifiedTrue
+        ) {
+            console.log( fullname,
+                contactNo,
+                temp,
+                fever,
+                coughAndColds,
+                bodyPain,
+                soreThroat,
+                headAche,
+                diarrhea,
+                lostOfTasteOrSmell,
+                diffBreathing,
+                exposedToCovid,
+                traveledOutside,
+                certifiedTrue,
+            )
+            req.flash('error', 'Please fill in all fields');
+            res.redirect('/visit')
+            return;
+        } else {
+            const newVisitor = await Visitor.create({
+                fullname,
+                contactNo,
+                temp,
+                fever,
+                coughAndColds,
+                bodyPain,
+                soreThroat,
+                headAche,
+                diarrhea,
+                lostOfTasteOrSmell,
+                diffBreathing,
+                exposedToCovid,
+                traveledOutside,
+                certifiedTrue,
+            });
+            if(newVisitor) {
+                req.flash('message', 'Form submitted');
+                res.redirect('/visit')
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        req.flash('error', 'Something went wrong.')
+        res.redirect('/visit');
+    }
 }
 
 module.exports = {

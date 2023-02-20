@@ -5,6 +5,10 @@ const visitorSchema = new mongoose.Schema({
         type: String,
         required:true,
     },
+    contactNo: {
+        type: String,
+        required:true,
+    },
     temp :{
         type: String,
         required: true,
@@ -46,13 +50,13 @@ const visitorSchema = new mongoose.Schema({
         required: true
     },
     traveledOutside: {
-        type:Boolean,
-        required: true
+        type:String,
+        default:'N/A'
     },
     certifiedTrue : {
         type:Boolean,
         required:true
     }
-}, {timestamp: true})
+}, {timestamps: true})
 
 module.exports = mongoose.model('Visitor', visitorSchema)
