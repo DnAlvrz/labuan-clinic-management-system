@@ -1,0 +1,125 @@
+<div class="container-fluid">
+
+    <!-- Modal -->
+    <div class="modal fade" id="viewVisitorModal" tabindex="-1" aria-labelledby="viewVisitorModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Visitor</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="student-form">
+                <div class="row mb-4 form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <input name="fullname" type="text" id="visitorFullname" class="form-control" required />
+                            <label class="form-label" for="fullname">Full name</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4 form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <input name="contactNo" type="text" id="visitorContactNo" class="form-control" required />
+                            <label class="form-label" for="contactNo">Contact No.</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input name="temp" type="text" id="visitorTemp" class="form-control" required  />
+                            <label class="form-label" for="temp">Temp</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <strong>
+                            <p>
+                                1. Are you Experiencing or did you have any of the following in the past 14 days?
+                            </p>
+                        </strong>
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="visitorFever">A. FEVER</label></strong>
+                            <input type="text" id="visitorFever" value=" " class="form-control"  disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="coughAndColds">B. COUGH AND COLD</label></strong>
+                            <input type="text" id="visitorCough" value=" " class="form-control"  disabled/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="bodyPain">C. BODY PAINS</label></strong>
+                            <input type="text" id="visitorBody" value=" " class="form-control"  disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">D. SORE THROAT</label></strong>
+                            <input type="text" id="visitorThroat" value=" " class="form-control"  disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">E. HEADACHE</label></strong>
+                            <input type="text" id="visitorHead" value=" " class="form-control"  disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">F. DIARRHEA</label></strong>
+                            <input type="text" id="visitorDiarrhea" value=" " class="form-control"  disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">G. LOSS OF TASTE OR SMELL</label></strong>
+                            <input type="text" id="visitorTaste" value=" " class="form-control"  disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-outline">
+                            <strong><label class="form-label" for="schoolId">H. DIFFICULTY BREATHING</label></strong>
+                            <input type="text" id="visitorBreath" value=" " class="form-control" disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <strong><p>2. Have you been exposed with a probable or comfirmed COVID-19 case within 1meter and for more than 15minutes for the past 14 days?</p></strong>
+                        <div class="form-outline">
+                            <input type="text" id="visitorExposed" value=" " class="form-control"  disabled/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4 form-row">
+                    <div class="col">
+                        <strong><p>3. Have you traveled outside the current city/municipality where you reside? if yes, please specify.</p></strong>
+                        <div class="form-outline">
+                            <input value=" " type="text" name="visitorTraveled" id="visitorTraveled" class="form-control" disabled/>
+                            <label class="form-label" for="visitorTraveled">Traveled</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary findings-student-btn w-100">Submit</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>

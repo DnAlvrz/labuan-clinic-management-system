@@ -11,11 +11,43 @@
             Temp</th>
     </thead>
     <tbody id="myTable">
+      <% if (visitors) { %>
+       <% visitors.forEach(visitor => { %>
         <td data-label="ID No.">
-          <a href="/students/record">cics-123</a>
+          <%= visitor.fullname %>
         </td>
-        <td data-label="Name">asdasd</td>
-        <td data-label="Grade">8</td>
-        <td data-label="Date">June 28, 1999</td>
+        <td data-label="Date">
+          <%= (new Date (visitor.createdAt).getMonth() % 12 ) + 1%>/
+          <%= new Date (visitor.createdAt).getDate()%>/
+          <%= new Date (visitor.createdAt).getFullYear() %>
+        </td>
+        <td>
+          <%=visitor.contactNo%>
+        </td>
+        <td>
+          <%=visitor.temp%>
+        </td>
+        <td>
+          <button 
+          onclick="viewVisitor(<%=JSON.stringify(visitor)%>)"
+            class="btn btn-primary btn-sm  m-1"
+            data-mdb-toggle="modal" 
+            data-mdb-target="#viewVisitorModal"
+          >
+            <i class="fas fa-eye"></i>view
+          </button>
+          <button 
+            onclick="deleteVisitor('<%=visitor._id %>')" 
+            class="btn btn-danger btn-sm  m-1"
+            data-mdb-toggle="modal" 
+            data-mdb-target="#deleteVisitor"
+          >
+            <i class="fas fa-trash"></i>
+            Delete
+        </button>
+        </td>
+       <% }) %>
+      <% } %>
+
     </tbody>
   </table>
