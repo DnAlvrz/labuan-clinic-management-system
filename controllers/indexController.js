@@ -1,10 +1,26 @@
 const Visitor = require('../models/Visitor')
+const Student = require('../models/Visitor')
+const Patient = require('../models/Visitor')
 const index = async (req, res) => {
     res.render('pages/index', { title: 'CMS' });
 }
 
 const dashboard = async (req, res) => {
-    res.render('pages/dashboard', { title: 'Dashboard', path:'dashboard' });
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const studentCount = await Student.find().count();
+    const patientCount = await Patient.find().count();
+    const visitorCount = await Visitor.find().count();
+    const patientsToday =await Patient.find({createdAt: {$gte: today}});
+    const data = { 
+        title: 'Dashboard', 
+        path:'dashboard',
+        studentCount,
+        patientCount,
+        visitorCount,
+        patientsToday
+    } 
+    res.render('pages/dashboard', data);
 }
 
 const visitorForm = async (req, res) => {

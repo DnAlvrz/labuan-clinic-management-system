@@ -12,7 +12,7 @@
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="dashboard-counter-content">
-                    <h2>1000</h2>
+                    <h2><%=studentCount%></h2>
                     <h5>Enrolled Student</h5>
                 </div>
                 </div>
@@ -23,7 +23,7 @@
                     <i class="fas fa-clinic-medical"></i>
                 </div>
                 <div class="dashboard-counter-content">
-                    <h2>5</h2>
+                    <h2><%=patientsToday > 0 ? patientsToday : 0%></h2>
                     <h5>Patient Today</h5>
                 </div>
                 </div>
@@ -36,7 +36,7 @@
                     <i class="fas fa-bed"></i>
                 </div>
                 <div class="dashboard-counter-content">
-                    <h2>30</h2>
+                    <h2><%=patientCount%></h2>
                     <h5>Overall Patient</h5>
                 </div>
                 </div>
@@ -47,7 +47,7 @@
                     <i class="fas fa-user-alt"></i>
                 </div>
                 <div class="dashboard-counter-content">
-                    <h2>10</h2>
+                    <h2><%=visitorCount%></h2>
                     <h5>Visitor</h5>
                 </div>
                 </div>
