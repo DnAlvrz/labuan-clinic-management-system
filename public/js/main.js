@@ -58,7 +58,6 @@ function updateStudent (student) {
 
   const grade = document.getElementById('grade');
   for (let i = 0; i < grade.options.length; i++) {
-    console.log(student.grade)
     option = grade.options[i];
     if (option.value === student.grade) {
         option.selected = true;
@@ -74,7 +73,6 @@ function updateStudent (student) {
   }
   const day = document.getElementById('day');
   for (let i = 0; i < day.options.length; i++) {
-    console.log(student.dob.day)
     option = day.options[i];
     if (option.value === student.dob.day) {
         option.selected = true;
@@ -82,7 +80,6 @@ function updateStudent (student) {
   }
   const year = document.getElementById('year');
   for (let i = 0; i < year.options.length; i++) {
-    console.log(student.dob.year)
     option = year.options[i];
     if (option.value === student.dob.year) {
         option.selected = true;
@@ -93,13 +90,11 @@ function updateStudent (student) {
 
 const setForm = (formId, formAction) => {
   const studentForm = document.getElementById(formId);
-  console.log(studentForm)
   studentForm.setAttribute('action', formAction);
 }
 
 
 const clearForm = (formId, formAction) => {
-  console.log(formId)
   const form = document.getElementById(formId);
   form.setAttribute('action', formAction);
   form.reset();
@@ -115,9 +110,7 @@ const addStudentPatient  = (student) => {
   const grade = document.getElementById('patientGrade');
   for (let i = 0; i < grade.options.length; i++) {
     option = grade.options[i];
-    console.log(option.value )
     if (option.value === student.grade) {
-      console.log(student.grade);
         option.selected = true;
     }
   }
@@ -173,7 +166,6 @@ const studentProfile = (studentId) => {
         const examDate = new Date(record.createdAt)
         dateCell.textContent = `${month[examDate.getMonth()]} ${examDate.getDate()}, ${examDate.getFullYear()}`
         gradeCell.textContent = record.grade
-        console.log(examDate)
         row.appendChild(dateCell);
         row.appendChild(gradeCell);
         row.appendChild(actionCell)
