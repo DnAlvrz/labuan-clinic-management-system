@@ -159,9 +159,6 @@ const studentProfile = (studentId) => {
         const gradeCell = document.createElement("td");
         const actionCell = document.createElement("td");
         const actionLink = document.createElement("a");
-        actionLink.textContent='View'
-        actionLink.setAttribute('href', `/medical/form`)
-        actionLink.setAttribute('class', 'btn btn-primary')
         actionCell.append(actionLink)
         const examDate = new Date(record.createdAt)
         dateCell.textContent = `${month[examDate.getMonth()]} ${examDate.getDate()}, ${examDate.getFullYear()}`
