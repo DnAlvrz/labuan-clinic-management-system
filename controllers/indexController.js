@@ -1,6 +1,7 @@
-const Visitor = require('../models/Visitor')
-const Student = require('../models/Visitor')
-const Patient = require('../models/Visitor')
+const Visitor = require('../models/Visitor');
+const Student = require('../models/Student');
+const Patient = require('../models/Patient');
+
 const index = async (req, res) => {
     res.render('pages/index', { title: 'CMS' });
 }
@@ -9,10 +10,10 @@ const dashboard = async (req, res) => {
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     try {
-        const studentCount = await Student.find().count();
-        const patientCount = await Patient.find().count();
-        const visitorCount = await Visitor.find().count();
-        const patientsToday =await Patient.find({createdAt: {$gte: today}});
+        const studentCount = await Student.count();
+        const patientCount = await Patient.count();
+        const visitorCount = await Visitor.count();
+        const patientsToday = await Patient.find({createdAt: {$gte: today}});
         const data = { 
             title: 'Dashboard', 
             path:'dashboard',
@@ -20,15 +21,13 @@ const dashboard = async (req, res) => {
             patientCount,
             visitorCount,
             patientsToday
-        } 
+        }
         res.render('pages/dashboard', data);
-
     } catch (e) {
         console.log(e);
         req.flash('error', 'Something went wrong');
         res.redirect('/dashboard')
     }
-    
 }
 
 const visitorForm = async (req, res) => {
