@@ -8,19 +8,27 @@ const index = async (req, res) => {
 const dashboard = async (req, res) => {
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const studentCount = await Student.find().count();
-    const patientCount = await Patient.find().count();
-    const visitorCount = await Visitor.find().count();
-    const patientsToday =await Patient.find({createdAt: {$gte: today}});
-    const data = { 
-        title: 'Dashboard', 
-        path:'dashboard',
-        studentCount,
-        patientCount,
-        visitorCount,
-        patientsToday
-    } 
-    res.render('pages/dashboard', data);
+    try {
+        const studentCount = await Student.find().count();
+        const patientCount = await Patient.find().count();
+        const visitorCount = await Visitor.find().count();
+        const patientsToday =await Patient.find({createdAt: {$gte: today}});
+        const data = { 
+            title: 'Dashboard', 
+            path:'dashboard',
+            studentCount,
+            patientCount,
+            visitorCount,
+            patientsToday
+        } 
+        res.render('pages/dashboard', data);
+
+    } catch (e) {
+        console.log(e);
+        req.flash('error', 'Something went wrong');
+        res.redirect('/dashboard')
+    }
+    
 }
 
 const visitorForm = async (req, res) => {
