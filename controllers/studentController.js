@@ -1,5 +1,5 @@
 const Student = require('../models/Student')
-
+const MedicalRecord = require('../models/MedicalRecord')
 const studentList = async (req, res) => {
     const students = await Student.find();
     const data = {
@@ -108,15 +108,23 @@ const updateStudent = async(req, res) => {
 }
 
 const deleteStudent = async (req, res) => {
+    const id = req.body.studentDeleteId
 	try{
-		const id = req.body.id
-		const student = await Student.findOne({where:{id}});
-		resident.destroy();
+		const student = await Student.findOne({_id:id});
+        console.log(student.medical)
+        if(student.medical.length > 0) {
+            student.medical.forEach(async (medical) => {
+                const medicalRecord = await MedicalRecord.findOne({_id:medical});
+                medicalRecord.remove();
+            });
+        }
+		student.remove();
 		req.flash("message", "Student has been deleted")
-		res.redirect('/residents');
+		res.redirect('/students');
 	}catch (err){
 		console.log(err);
-		res.redirect('/error/500')
+        req.flash('error', 'Something went wrong.');
+        res.redirect('/students');
 	}
 }
 
@@ -134,6 +142,7 @@ const studentRecord = async (req, res) => {
 	res.render('pages/studentRecord', { title: 'Student Medical Record' });
 }
 
+
 module.exports = {
 	studentList,
 	newStudent,
@@ -141,4 +150,5 @@ module.exports = {
 	studentForm,
 	studentFindings,
 	studentRecord,
+    deleteStudent,
 }
