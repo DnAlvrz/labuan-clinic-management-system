@@ -35,10 +35,18 @@ const patientSchema = new mongoose.Schema({
     medication : [{
         type: String,
     }],
+    bloodPressure: {
+        type:String,
+        required:true
+    },
+    temperature: {
+        type:String,
+        required: true
+    },
     recommendation: {
         type: String,
         required: true,
     }
-})
+}, {timestamps:true})
 
 module.exports = mongoose.model('Patient', patientSchema)

@@ -24,9 +24,9 @@
               <%=record.student.middleName%>
               <%=record.student.lastName%>
             </td>
-            <td data-label="Grade"><%=record.student.grade%></td>
+            <td data-label="Grade"><%=record.grade%></td>
             <td data-label="Date">
-              <%= (new Date (record.createdAt).getMonth() %12 ) + 1%>/
+              <%= (new Date (record.createdAt).getMonth() % 12 ) + 1%>/
               <%= new Date (record.createdAt).getDate()%>/
               <%= new Date (record.createdAt).getFullYear()%>
             </td>

@@ -2,7 +2,10 @@
     <thead>
       <tr class="theadRow">
         <th scope="col" class="th" data-column="id" data-order="desc">
-          ID No.
+          Patient ID
+        </th>
+        <th scope="col" class="th" data-column="id" data-order="desc">
+          Schoold ID
         </th>
         <th scope="col" class="th" data-column="name" data-order="desc">
           Name
@@ -21,6 +24,7 @@
       <% if(patients) { %>
       <% patients.forEach(patient => { %>
         <tr>
+          <td>patient- <%= patient._id %></td>
           <td><%= patient.schoolId %></td>
           <td>
             <%= patient.firstName %>

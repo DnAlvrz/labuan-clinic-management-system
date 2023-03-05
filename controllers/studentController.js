@@ -1,5 +1,6 @@
 const Student = require('../models/Student')
-const MedicalRecord = require('../models/MedicalRecord')
+const MedicalRecord = require('../models/MedicalRecord');
+const Patient = require('../models/Patient')
 const studentList = async (req, res) => {
     const students = await Student.find();
     const data = {
@@ -78,7 +79,7 @@ const newStudent = async (req, res) => {
         res.redirect('/students');
     } catch (error) {
         console.log(error)
-        res.redirect('/error/500');
+        res.redirect('/students');
     }
 }
 
@@ -103,7 +104,7 @@ const updateStudent = async(req, res) => {
         }
     } catch (error) {
         console.log(error)
-        res.redirect('/error/500');
+        res.redirect('/students');
     }
 }
 
@@ -115,10 +116,16 @@ const deleteStudent = async (req, res) => {
         if(student.medical.length > 0) {
             student.medical.forEach(async (medical) => {
                 const medicalRecord = await MedicalRecord.findOne({_id:medical});
-                medicalRecord.remove();
+                await medicalRecord.remove();
             });
         }
-		student.remove();
+        const patients = await Patient.find({student:student._id});
+        if(patients.length > 0) {
+            for await(const patient of patients){
+                await patient.remove();
+            }
+        }
+		await student.remove();
 		req.flash("message", "Student has been deleted")
 		res.redirect('/students');
 	}catch (err){

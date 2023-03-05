@@ -6,31 +6,31 @@
   
 
   <!-- Modal -->
-  <div class="modal modal-lg fade" id="addStudentModal" tabindex="-1" aria-labelledby="addStudentModal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addStudentPatientFormTitle">
-            Student Patient
-          </h5>
-          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="medicalRecord">
-            <div class="search-button">
-              <div class="input-group">
-                <div class="form-outline">
-                  <input type="search" id="navsearch" onkeyup="myFunction()" class="form-control" />
-                  <label class="form-label" for="navsearch">Search</label>
+    <div class="modal modal-lg fade" id="addStudentModal" tabindex="-1" aria-labelledby="addStudentModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addStudentPatientFormTitle">
+                        Student Patient
+                    </h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                 </div>
-              </div>
+                <div class="modal-body">
+                    <div class="medicalRecord">
+                        <div class="search-button">
+                            <div class="input-group">
+                                <div class="form-outline">
+                                    <input type="search" id="navsearch" onkeyup="myFunction()" class="form-control" />
+                                    <label class="form-label" for="navsearch">Search</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="student-list">
+                            <%- include('../components/tables/add-student-table') %>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="student-list">
-              <%- include('../components/tables/add-student-table') %>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

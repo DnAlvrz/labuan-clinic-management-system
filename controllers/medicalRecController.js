@@ -4,7 +4,13 @@ const Student = require('../models/Student');
 const medicalRec = async (req, res) => {
     try {
         const medicalRecords = await MedicalRecord.find().populate('student');
-        res.render('pages/medicalRecord', { title: 'Patient', medicalRecords, path:'medicalRecord'});
+        res.render('pages/medicalRecord', { 
+            title: 'Patient', 
+            medicalRecords, 
+            message:req.flash('message'), 
+            error:req.flash('error'), 
+            path:'medicalRecord'
+        });
     } catch (error) {
         console.log(error);
         res.redirect('/medical')
@@ -15,7 +21,9 @@ const medicalForm = async (req, res) => {
     try {
         const students = await Student.find();
         res.render('pages/student-findings', { 
-            title: 'Medical Form', 
+            title: 'Medical Form',
+            message:req.flash('message'), 
+            error:req.flash('error'),
             students
         });
     } catch (error) {
@@ -80,6 +88,24 @@ const newMedicalRecord = async(req,res) => {
                 req.flash('error', 'Student not found.');
                 res.redirect('/medical');
                 return;
+            }
+            if(student.medical.length > 0) {
+                for await( const medicalRecordId of student.medical){
+                    try {
+                        const medicalRecord = await MedicalRecord.findOne({_id:medicalRecordId})
+                        if(medicalRecord.grade === grade){
+                            console.log('hit'); 
+                            req.flash('error', `Student already has medical record for grade ${grade}`);
+                            res.redirect('/medical/form')
+                            return;
+                        }
+                    } catch (error) {
+                        console.log(error);
+                        req.flash('error', `Student already has medical record for grade ${grade}`);
+                        res.redirect('/medical/form')
+                        return;
+                    }
+                } 
             }
             const newMedicalRecord = await MedicalRecord.create({
                 student: studentId,

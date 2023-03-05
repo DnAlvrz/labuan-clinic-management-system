@@ -132,6 +132,8 @@ const updatePatient = (patient) => {
   document.getElementById('recommendation').value = patient.recommendation;
   document.getElementById('medication').value = patient.medication;
   document.getElementById('description').value = patient.description;
+  document.getElementById('bloodPressure').value = patient.bloodPressure;
+  document.getElementById('temperature').value = patient.temperature;
   setForm('patientForm', '/patients?_method=PUT' );
 
 }
@@ -163,8 +165,28 @@ const studentProfile = (studentId) => {
         row.appendChild(dateCell);
         row.appendChild(gradeCell);
         studentMedicalRecords.appendChild(row);
-      });
+      });document
 
+      const patientData = document.getElementById('consulationTable');
+      patientData.innerHTML = ""
+        student.patientData.forEach(patient => {
+          const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+          const row = document.createElement("tr");
+          const dateCell = document.createElement("td"); 
+          const descriptionCell = document.createElement("td");
+          const medicationCell = document.createElement("td");
+          const recommendationCell = document.createElement("td");
+          const patientDate = new Date(patient.createdAt)
+          dateCell.textContent = `${month[patientDate.getMonth()]} ${patientDate.getDate()}, ${patientDate.getFullYear()}`
+          descriptionCell.textContent = patient.description;
+          medicationCell.textContent = patient.medication;
+          recommendationCell.textContent = patient.recommendation;
+          row.appendChild(dateCell);
+          row.appendChild(descriptionCell);
+          row.appendChild(medicationCell);
+          row.appendChild(recommendationCell);
+          patientData.appendChild(row);
+        })
     })
     .catch(err=> {
       console.log(err)

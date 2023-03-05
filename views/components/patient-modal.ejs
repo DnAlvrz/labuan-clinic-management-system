@@ -1,14 +1,4 @@
 <div class="container-fluid">
-
-    <button 
-      type="button" 
-      onclick="clearForm('patientForm', '/patients')" 
-      class="btn btn-primary" 
-      data-mdb-toggle="modal" 
-      data-mdb-target="#createPatientModal">
-      Create Patient
-    </button>
-
   <div 
     class="modal modal-lg fade" 
     id="createPatientModal" 
@@ -120,6 +110,20 @@
                   <div class="form-outline">
                     <input name="schoolId" type="text" id="schoolId" class="form-control" required/>
                     <label class="form-label" for="schoolId">School ID</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input name="bloodPressure" type="text" id="bloodPressure" class="form-control" required/>
+                    <label class="form-label" for="bloodPressure">BloodPressure</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input name="temperature" type="text" id="temperature" class="form-control" required/>
+                    <label class="form-label" for="temperature">Temperature</label>
                   </div>
                 </div>
               </div>

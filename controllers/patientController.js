@@ -33,7 +33,9 @@ const createPatient = async (req, res) => {
             section,
             description,
             medication,
-            recommendation
+            recommendation,
+            bloodPressure,
+            temperature,
         } = req.body;
     
         if (!schoolId || 
@@ -42,12 +44,13 @@ const createPatient = async (req, res) => {
             !middleName || 
             !description ||
             !medication ||
-            !recommendation
+            !recommendation ||
+            !bloodPressure ||
+            !temperature
         ){
             req.flash('error', 'Please fill all required fields');
-            console.log('asd')
             res.redirect('/patients');
-            return
+            return;
         } 
         if(studentId){
             const student = await Student.findOne({_id:studentId});
@@ -67,6 +70,8 @@ const createPatient = async (req, res) => {
             section : section ? section : '',
             description,
             medication,
+            bloodPressure,
+            temperature,
             recommendation
         });
         req.flash('message', 'Patient added');
