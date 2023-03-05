@@ -32,8 +32,18 @@
         <form action="/medical" class="student-form" method="POST">
             <div class="row">
                 <div class="col form col">
+                    <div class="search-button">
+                        <div class="input-group">
+                            <div class="form-outline">
+                                <input type="search" id="studentSearch" class="form-control" />
+                                <label class="form-label" for="navsearch">Student ID</label>
+                            </div>
+                        </div>
+                    </div>
                     <label for="">Student</label>
-                    <select const  class="select form-select-btn" name="studentId" required >
+                    <input name="studentId" type="hidden" id="studentId"/>
+                    <input name="studentName" type="text" id="studentName" class="form-control" disabled/>
+                    <!-- <select const  class="select form-select-btn" name="studentId" required >
                         <% if (students) { %>
                             <% students.forEach(student => { %>
                             <option value="<%=student._id%>">
@@ -43,7 +53,7 @@
                             </option>
                             <% }) %>
                         <%}%>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="col form col">
                     <label for="">Year Level</label>

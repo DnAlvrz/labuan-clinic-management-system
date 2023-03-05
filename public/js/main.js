@@ -194,6 +194,7 @@ const studentProfile = (studentId) => {
 
 }
 
+
 const editMedicalRecord = (record)=> {
   const form = document.getElementById('editMedicalRecordForm')
   form.reset();
@@ -341,3 +342,21 @@ const viewVisitor = (visitor) => {
 const deleteStudent  = (studentId) => {
   document.getElementById('studentDeleteId').value = studentId;
 };
+
+
+document.getElementById('studentSearch').addEventListener('keypress', async (e) => {
+  document.getElementById('studentName').value="";
+  fetch(`/api/students/search/${e.target.value}`)
+    .then(resp => {
+        console.log(resp)
+        return resp.json()
+    })
+    .then(student => {
+      document.getElementById('studentName').value=`${student.firstName} ${student.middleName} ${student.lastName}`;
+      document.getElementById('studentId').value=student._id;
+    })
+    .catch(error=> {
+      console.error(error)
+    })
+});
+

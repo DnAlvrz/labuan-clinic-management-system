@@ -1,5 +1,7 @@
 const Student = require('../models/Student');
 const Patient = require('../models/Patient')
+
+
 const viewStudent = async (req, res) => {
     try {
         const studentId = req.params.studentId;
@@ -13,7 +15,6 @@ const viewStudent = async (req, res) => {
             ...studentInfo._doc,
             patientData:patient
         }
-        console.log(student)
         res.status(200).json(student);
     } catch (error) {
         console.log(error)
@@ -22,7 +23,12 @@ const viewStudent = async (req, res) => {
 }
 const searchStudent = async (req, res) => {
     const studentId = req.params.studentId;
-    const student = await Student.findOne({_id:studentId}).populate('medical')
+    try {
+        const student = await Student.findOne({schoolId:studentId });
+        res.status(200).json(student)
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 const searchPatient = async (req, res) => {
